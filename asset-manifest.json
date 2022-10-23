@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/https//jonkadelic.github.io/nsss-painterly-customizer/static/css/main.073c9b0a.css",
-    "main.js": "/https//jonkadelic.github.io/nsss-painterly-customizer/static/js/main.396fe112.js",
-    "static/js/787.a764186a.chunk.js": "/https//jonkadelic.github.io/nsss-painterly-customizer/static/js/787.a764186a.chunk.js",
-    "index.html": "/https//jonkadelic.github.io/nsss-painterly-customizer/index.html",
-    "main.073c9b0a.css.map": "/https//jonkadelic.github.io/nsss-painterly-customizer/static/css/main.073c9b0a.css.map",
-    "main.396fe112.js.map": "/https//jonkadelic.github.io/nsss-painterly-customizer/static/js/main.396fe112.js.map",
-    "787.a764186a.chunk.js.map": "/https//jonkadelic.github.io/nsss-painterly-customizer/static/js/787.a764186a.chunk.js.map"
+    "main.css": "/static/css/main.073c9b0a.css",
+    "main.js": "/static/js/main.3a247557.js",
+    "static/js/787.a764186a.chunk.js": "/static/js/787.a764186a.chunk.js",
+    "index.html": "/index.html",
+    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
+    "main.3a247557.js.map": "/static/js/main.3a247557.js.map",
+    "787.a764186a.chunk.js.map": "/static/js/787.a764186a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.396fe112.js"
+    "static/js/main.3a247557.js"
   ]
 }
