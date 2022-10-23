@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/nsss-painterly-customizer/static/css/main.073c9b0a.css",
-    "main.js": "/nsss-painterly-customizer/static/js/main.cc4b5f7a.js",
+    "main.js": "/nsss-painterly-customizer/static/js/main.27fc7906.js",
     "static/js/787.a764186a.chunk.js": "/nsss-painterly-customizer/static/js/787.a764186a.chunk.js",
     "index.html": "/nsss-painterly-customizer/index.html",
     "main.073c9b0a.css.map": "/nsss-painterly-customizer/static/css/main.073c9b0a.css.map",
-    "main.cc4b5f7a.js.map": "/nsss-painterly-customizer/static/js/main.cc4b5f7a.js.map",
+    "main.27fc7906.js.map": "/nsss-painterly-customizer/static/js/main.27fc7906.js.map",
     "787.a764186a.chunk.js.map": "/nsss-painterly-customizer/static/js/787.a764186a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.cc4b5f7a.js"
+    "static/js/main.27fc7906.js"
   ]
 }
