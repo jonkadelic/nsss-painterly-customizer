@@ -52,7 +52,11 @@ export namespace AlternatePicker {
     }> {
         render(): React.ReactNode {
             var rbs: React.ReactElement[] = [];
-            this.props.texture.alternateSets.forEach(it => rbs.push(<AlternateGroup key={this.props.texture.path + "-" + it.index} texture={this.props.texture} alternateSet={it}/>))
+            for (var as of this.props.texture.alternateSets) {
+                if (as.alternates.length > 1) {
+                    rbs.push(<AlternateGroup key={this.props.texture.path + "-" + as.index} texture={this.props.texture} alternateSet={as}/>)
+                }
+            }
             return (
                 <Section.CollapsibleSection header={this.props.texture.name} headerLevel={1}>
                     <div>

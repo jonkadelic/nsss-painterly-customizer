@@ -38,11 +38,11 @@ export namespace Preview {
 
             if (this.state.expanded) {
                 element = (
-                    <img src={"/pack" + this.props.alternate.getPath()} width={3 * (this.props.alternate.alternateSet?.width.valueOf() ?? 0) + "px"} height={3 * (this.props.alternate.alternateSet?.height.valueOf() ?? 0) + "px"} style={innerStyle2} onMouseLeave={_ => this.setState({expanded: false})}/>
+                    <img src={"/nsss-painterly-customizer/pack" + this.props.alternate.getPath()} width={3 * (this.props.alternate.alternateSet?.width.valueOf() ?? 0) + "px"} height={3 * (this.props.alternate.alternateSet?.height.valueOf() ?? 0) + "px"} style={innerStyle2} onMouseLeave={_ => this.setState({expanded: false})} onClick={_ => this.setState({expanded: false})} />
                 )
             } else {
                 element = (
-                    <img src={"/pack" + this.props.alternate.getPath()} style={innerStyle} onMouseEnter={_ => this.setState({expanded: true})}/>
+                    <img src={"/nsss-painterly-customizer/pack" + this.props.alternate.getPath()} style={innerStyle} onMouseEnter={_ => this.setState({expanded: true})} onClick={_ => this.setState({expanded: true})}/>
                 )
             }
 
