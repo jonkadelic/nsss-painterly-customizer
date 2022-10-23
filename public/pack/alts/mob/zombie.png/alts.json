@@ -1,0 +1,8 @@
+{
+    "0-zombiespooky": {
+        "name": "Spooky Zombie",
+        "groups": [
+            "spooky_mobs"
+        ]
+    }
+}

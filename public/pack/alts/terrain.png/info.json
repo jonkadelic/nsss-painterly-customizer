@@ -1,0 +1,331 @@
+{
+    "textureInfo": {
+        "name": "Terrain",
+        "widthTiles": 16,
+        "heightTiles": 16,
+        "tileWidth": 16,
+        "tileHeight": 16
+    },
+    "tiles": [
+        {
+            "index": 0,
+            "name": "Grass Top"
+        },
+        {
+            "index": 1,
+            "name": "Stone"
+        },
+        {
+            "index": 2,
+            "name": "Dirt"
+        },
+        {
+            "index": 3,
+            "name": "Grass Side"
+        },
+        {
+            "index": 4,
+            "name": "Planks"
+        },
+        {
+            "index": 5,
+            "name": "Slab",
+            "widthTiles": 2
+        },
+        {
+            "index": 7,
+            "name": "Bricks"
+        },
+        {
+            "index": 8,
+            "name": "TNT",
+            "widthTiles": 3
+        },
+        {
+            "index": 11,
+            "name": "Cobweb"
+        },
+        {
+            "index": 12,
+            "name": "Red Flower"
+        },
+        {
+            "index": 13,
+            "name": "Yellow Flower"
+        },
+        {
+            "index": 14,
+            "name": "Blue Flower"
+        },
+        {
+            "index": 15,
+            "name": "Sapling"
+        },
+        {
+            "index": 16,
+            "name": "Cobblestone"
+        },
+        {
+            "index": 17,
+            "name": "Bedrock"
+        },
+        {
+            "index": 18,
+            "name": "Sand"
+        },
+        {
+            "index": 19,
+            "name": "Gravel"
+        },
+        {
+            "index": 20,
+            "name": "Log",
+            "widthTiles": 2
+        },
+        {
+            "index": 22,
+            "name": "Iron Block",
+            "heightTiles": 3
+        },
+        {
+            "index": 23,
+            "name": "Gold Block",
+            "heightTiles": 3
+        },
+        {
+            "index": 24,
+            "name": "Diamond Block",
+            "heightTiles": 3
+        },
+        {
+            "index": 25,
+            "name": "Chest",
+            "widthTiles": 6,
+            "heightTiles": 3,
+            "pattern": [
+                "XXX  X",
+                "XX    ",
+                "XX    "
+            ]
+        },
+        {
+            "index": 28,
+            "name": "Red Mushroom"
+        },
+        {
+            "index": 29,
+            "name": "Brown Mushroom"
+        },
+        {
+            "index": 32,
+            "name": "Gold Ore"
+        },
+        {
+            "index": 33,
+            "name": "Iron Ore"
+        },
+        {
+            "index": 34,
+            "name": "Coal Ore"
+        },
+        {
+            "index": 35,
+            "name": "Bookshelf"
+        },
+        {
+            "index": 36,
+            "name": "Mossy Cobblestone"
+        },
+        {
+            "index": 37,
+            "name": "Obsidian"
+        },
+        {
+            "index": 43,
+            "name": "Workbench",
+            "widthTiles": 2,
+            "heightTiles": 2,
+            "pattern": [
+                "X ",
+                "XX"
+            ]
+        },
+        {
+            "index": 44,
+            "name": "Furnace",
+            "widthTiles": 2,
+            "heightTiles": 2,
+            "pattern": [
+                "XX",
+                "X "
+            ]
+        },
+        {
+            "index": 48,
+            "name": "Sponge"
+        },
+        {
+            "index": 49,
+            "name": "Glass"
+        },
+        {
+            "index": 50,
+            "name": "Diamond Ore"
+        },
+        {
+            "index": 51,
+            "name": "Redstone Ore"
+        },
+        {
+            "index": 52,
+            "name": "Leaves",
+            "widthTiles": 2
+        },
+        {
+            "index": 64,
+            "name": "Wool"
+        },       
+        {
+            "index": 65,
+            "name": "Mob Spawner"
+        },
+        {
+            "index": 66,
+            "name": "Snow"
+        },
+        {
+            "index": 67,
+            "name": "Ice"
+        },
+        {
+            "index": 68,
+            "name": "Snowy Grass Side"
+        },
+        {
+            "index": 69,
+            "name": "Cactus",
+            "widthTiles": 3
+        },
+        {
+            "index": 72,
+            "name": "Clay Block"
+        },
+        {
+            "index": 73,
+            "name": "Reeds"
+        },
+        {
+            "index": 74,
+            "name": "Jukebox",
+            "widthTiles": 2
+        },
+        {
+            "index": 76,
+            "name": "Copper Ore"
+        },
+        {
+            "index": 77,
+            "name": "Mossy Bricks"
+        },
+        {
+            "index": 80,
+            "name": "Torch"
+        },
+        {
+            "index": 81,
+            "name": "Wooden Door",
+            "heightTiles": 2
+        },
+        {
+            "index": 82,
+            "name": "Iron Door",
+            "heightTiles": 2
+        },
+        {
+            "index": 83,
+            "name": "Ladder"
+        },
+        {
+            "index": 84,
+            "name": "Redstone Dust",
+            "widthTiles": 2,
+            "heightTiles": 2
+        },
+        {
+            "index": 86,
+            "name": "Farmland",
+            "widthTiles": 2
+        },
+        {
+            "index": 88,
+            "name": "Crops",
+            "widthTiles": 8
+        },
+        {
+            "index": 96,
+            "name": "Lever"
+        },
+        {
+            "index": 29,
+            "name": "Brown Mushroom"
+        },
+        {
+            "index": 99,
+            "name": "Redstone Torch",
+            "heightTiles": 2
+        },
+        {
+            "index": 102,
+            "name": "Lamp",
+            "widthTiles": 2
+        },
+        {
+            "index": 104,
+            "name": "Gold Bricks"
+        },
+        {
+            "index": 112,
+            "name": "Rails",
+            "heightTiles": 2
+        },
+        {
+            "index": 116,
+            "name": "Crying Obsidian"
+        },
+        {
+            "index": 144,
+            "name": "Wool Colors",
+            "widthTiles": 15
+        },
+        {
+            "index": 160,
+            "name": "Copper Block",
+            "heightTiles": 3
+        },
+        {
+            "index": 205,
+            "name": "Water",
+            "widthTiles": 3,
+            "heightTiles": 2,
+            "pattern": [
+                "XXX",
+                " XX"
+            ]
+        },
+        {
+            "index": 237,
+            "name": "Lava",
+            "widthTiles": 3,
+            "heightTiles": 2,
+            "pattern": [
+                "XXX",
+                " XX"
+            ]
+        },
+        {
+            "index": 240,
+            "name": "Block Breaking Animation",
+            "widthTiles": 10
+        }
+    ]
+}
