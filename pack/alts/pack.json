@@ -1,0 +1,13 @@
+{
+    "packInfo": {
+        "name": "Painterly Pack",
+        "author": "jonkadelic",
+        "version": "v0.1"
+    },
+    "groups": {
+        "spooky_mobs": {
+            "name": "Spooky Mobs",
+            "description": "Spookier appearances for some mobs."
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "0-faceslime": {
+        "name": "Slime with Eyes"
+    },
+    "0-redslime": {
+        "name": "Red Slime"
+    },
+    "0-slime": {
+        "name": "Paler Slime"
+    },
+    "0-slimespooky": {
+        "name": "Spooky Slime",
+        "groups": [
+            "spooky_mobs"
+        ]
+    }
+}

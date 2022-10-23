@@ -1,0 +1,8 @@
+{
+    "0-skeletonspooky": {
+        "name": "Spooky Skeleton",
+        "groups": [
+            "spooky_mobs"
+        ]
+    }
+}

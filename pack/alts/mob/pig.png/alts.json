@@ -1,0 +1,11 @@
+{
+    "0-pig": {
+        "name": "'Special' Pig"
+    },
+    "0-pigspooky": {
+        "name": "Spooky Pig",
+        "groups": [
+            "spooky_mobs"
+        ]
+    }
+}

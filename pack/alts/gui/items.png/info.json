@@ -1,0 +1,310 @@
+{
+    "textureInfo": {
+        "name": "Items",
+        "widthTiles": 16,
+        "heightTiles": 16,
+        "tileWidth": 16,
+        "tileHeight": 16
+    },
+    "tiles": [
+        {
+            "index": 0,
+            "name": "Leather Armor",
+            "heightTiles": 4
+        },
+        {
+            "index": 1,
+            "name": "Chainmail Armor",
+            "heightTiles": 4
+        },
+        {
+            "index": 2,
+            "name": "Iron Armor",
+            "heightTiles": 4
+        },
+        {
+            "index": 3,
+            "name": "Diamond Armor",
+            "heightTiles": 4
+        },
+        {
+            "index": 4,
+            "name": "Gold Armor",
+            "heightTiles": 4
+        },
+        {
+            "index": 5,
+            "name": "Flint and Steel"
+        },
+        {
+            "index": 6,
+            "name": "Flint"
+        },
+        {
+            "index": 7,
+            "name": "Coal"
+        },
+        {
+            "index": 8,
+            "name": "String"
+        },
+        {
+            "index": 9,
+            "name": "Seeds"
+        },
+        {
+            "index": 10,
+            "name": "Apple"
+        },
+        {
+            "index": 11,
+            "name": "Golden Apple"
+        },
+        {
+            "index": 12,
+            "name": "Egg"
+        },
+        {
+            "index": 13,
+            "name": "Cooked Egg"
+        },
+        {
+            "index": 14,
+            "name": "Snowball"
+        },
+        {
+            "index": 15,
+            "name": "Armor Placeholder",
+            "heightTiles": 4
+        },
+        {
+            "index": 21,
+            "name": "Bow"
+        },
+        {
+            "index": 22,
+            "name": "Brick"
+        },
+        {
+            "index": 23,
+            "name": "Iron Ingot"
+        },
+        {
+            "index": 24,
+            "name": "Feather"
+        },
+        {
+            "index": 25,
+            "name": "Wheat"
+        },
+        {
+            "index": 26,
+            "name": "Painting"
+        },
+        {
+            "index": 27,
+            "name": "Reeds"
+        },
+        {
+            "index": 28,
+            "name": "Filament"
+        },
+        {
+            "index": 30,
+            "name": "Slimeball"
+        },
+        {
+            "index": 37,
+            "name": "Arrow"
+        },
+        {
+            "index": 38,
+            "name": "Quiver"
+        },
+        {
+            "index": 39,
+            "name": "Gold Ingot"
+        },
+        {
+            "index": 40,
+            "name": "Gunpowder"
+        },
+        {
+            "index": 41,
+            "name": "Bread"
+        },
+        {
+            "index": 42,
+            "name": "Sign"
+        },
+        {
+            "index": 43,
+            "name": "Wooden Door"
+        },
+        {
+            "index": 44,
+            "name": "Iron Door"
+        },
+        {
+            "index": 53,
+            "name": "Stick"
+        },
+        {
+            "index": 54,
+            "name": "Compass"
+        },
+        {
+            "index": 55,
+            "name": "Diamond"
+        },
+        {
+            "index": 56,
+            "name": "Redstone Dust"
+        },
+        {
+            "index": 57,
+            "name": "Clay"
+        },
+        {
+            "index": 58,
+            "name": "Paper"
+        },
+        {
+            "index": 59,
+            "name": "Book"
+        },
+        {
+            "index": 64,
+            "name": "Wooden Tools",
+            "heightTiles": 5
+        },
+        {
+            "index": 65,
+            "name": "Stone Tools",
+            "heightTiles": 5
+        },
+        {
+            "index": 66,
+            "name": "Iron Tools",
+            "heightTiles": 5
+        },
+        {
+            "index": 67,
+            "name": "Diamond Tools",
+            "heightTiles": 5
+        },
+        {
+            "index": 68,
+            "name": "Gold Tools",
+            "heightTiles": 5
+        },
+        {
+            "index": 69,
+            "name": "Fishing Rod"
+        },
+        {
+            "index": 71,
+            "name": "Bowl"
+        },
+        {
+            "index": 72,
+            "name": "Mushroom Stew"
+        },
+        {
+            "index": 73,
+            "name": "Copper Ingot"
+        },
+        {
+            "index": 74,
+            "name": "Bucket"
+        },
+        {
+            "index": 75,
+            "name": "Water Bucket"
+        },
+        {
+            "index": 76,
+            "name": "Lava Bucket"
+        },
+        {
+            "index": 77,
+            "name": "Milk Bucket"
+        },
+        {
+            "index": 78,
+            "name": "Dyes",
+            "widthTiles": 2,
+            "heightTiles": 9,
+            "pattern": [
+                "XX",
+                "XX",
+                "XX",
+                "XX",
+                "XX",
+                "XX",
+                "XX",
+                "XX",
+                " X"
+            ]
+        },
+        {
+            "index": 85,
+            "name": "Obsidian Tools",
+            "heightTiles": 4
+        },
+        {
+            "index": 87,
+            "name": "Raw Porkchop"
+        },
+        {
+            "index": 88,
+            "name": "Cooked Porkchop"
+        },
+        {
+            "index": 89,
+            "name": "Raw Fish"
+        },
+        {
+            "index": 90,
+            "name": "Cooked Fish"
+        },
+        {
+            "index": 103,
+            "name": "Leather"
+        },
+        {
+            "index": 104,
+            "name": "Saddle"
+        },
+        {
+            "index": 135,
+            "name": "Minecart"
+        },
+        {
+            "index": 136,
+            "name": "Boat"
+        },
+        {
+            "index": 144,
+            "name": "Sponge Armor",
+            "heightTiles": 4
+        },
+        {
+            "index": 151,
+            "name": "Chest Minecart"
+        },
+        {
+            "index": 167,
+            "name": "Furnace Minecart"
+        },
+        {
+            "index": 206,
+            "name": "Bone"
+        },
+        {
+            "index": 240,
+            "name": "Records",
+            "widthTiles": 13
+        }
+    ]
+}

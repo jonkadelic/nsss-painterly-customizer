@@ -1,0 +1,14 @@
+{
+    "0-creeper": {
+        "name": "Pupil-less Creeper"
+    },
+    "0-creeperclassic": {
+        "name": "Classic-style Creeper"
+    },
+    "0-creeperspooky": {
+        "name": "Spooky Creeper",
+        "groups": [
+            "spooky_mobs"
+        ]
+    }
+}
