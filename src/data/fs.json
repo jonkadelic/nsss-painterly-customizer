@@ -1,0 +1,77 @@
+{
+    "directories": {
+        "armor": {
+            "files": [
+                "cloth_1.png",
+                "cloth_2.png",
+                "diamond_1.png",
+                "diamond_2.png",
+                "gold_1.png",
+                "gold_2.png",
+                "iron_1.png",
+                "iron_2.png",
+                "quiver_1.png",
+                "sponge_1.png",
+                "sponge_2.png"
+            ]
+        },
+        "art": {
+            "files": [
+                "kz.png"
+            ]
+        },
+        "gui": {
+            "files": [
+                "container.png",
+                "crafting.png",
+                "furnace.png",
+                "gui.png",
+                "icons.png",
+                "inventory.png",
+                "items.png",
+                "logo.png"
+            ]
+        },
+        "item": {
+            "files": [
+                "boat.png",
+                "cart.png",
+                "sign.png"
+            ]
+        },
+        "mob": {
+            "files": [
+                "chicken.png",
+                "cow.png",
+                "creeper.png",
+                "pig.png",
+                "saddle.png",
+                "sheep.png",
+                "sheep_fur.png",
+                "skeleton.png",
+                "slime.png",
+                "spider.png",
+                "spider_eyes.png",
+                "zombie.png"
+            ]
+        },
+        "terrain": {
+            "files": [
+                "moon.png",
+                "sun.png"
+            ]
+        }
+    },
+    "files": [
+        "char.png",
+        "clouds.png",
+        "dirt.png",
+        "grass.png",
+        "particles.png",
+        "rain.png",
+        "rock.png",
+        "shadow.png",
+        "terrain.png",
+        "water.png"
+    ]
+}

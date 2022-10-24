@@ -58,11 +58,13 @@ export namespace AlternatePicker {
                 }
             }
             return (
-                <Section.CollapsibleSection header={this.props.texture.name} headerLevel={1}>
-                    <div>
-                        {rbs}
-                    </div>
-                </Section.CollapsibleSection>
+                <div className="bg-slate-500 w-96 m-6">
+                    <Section.CollapsibleSection header={this.props.texture.name} headerLevel={1}>
+                        <div>
+                            {rbs}
+                        </div>
+                    </Section.CollapsibleSection>
+                </div>
             )
         }
     }

@@ -1,5 +1,5 @@
 import { downloadZip } from 'client-zip'
-import { Textures } from './textures'
+import { Textures } from '../data/textures'
 import mergeImages from 'merge-images';
 
 
