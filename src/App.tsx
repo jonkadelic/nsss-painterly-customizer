@@ -1,36 +1,49 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import "./data/textures.tsx";
-import "./components/picker.tsx";
-import { AlternatePicker } from './components/picker';
-import { Textures } from './data/textures';
-import { Section } from './components/section';
 import { Zipper } from './util/zipper'
-import { TextureModel } from './data/texturemodel'
-import fileStructure from './data/fs.json'
-import meta from './data/metadata.json'
+import { TextureModel } from './model/texturemodel'
+import fileStructure from './model/fs.json'
+import meta from './model/metadata.json'
+import { TextureView } from './view/textureview';
 
-function App() {
-  loadTexturePack().then(a => console.log(a));
-  var rbs: JSX.Element[] = []
-  for (var texture of Textures.textures) {
-    if (texture.shouldDisplay()) {
-      rbs.push(
-        <AlternatePicker.TextureAlternatePicker key={texture.getId().toString()} texture={texture}/>
-      );
+class App extends React.Component<{
+}, {
+    pack?: TextureModel.Data.TexturePack
+}> {
+    constructor(props: {} | Readonly<{}>) {
+        super(props);
+
+        this.state = {pack: undefined};
+
+        loadTexturePack().then(pack => {
+            this.setState({pack: pack});
+        });
     }
-  }
-  return (
-    <div>
-      {rbs}
-      <button type="button" onClick={_ => Zipper.createZip()}>Download</button>
-    </div>
-  );
+
+    render(): React.ReactNode {
+        if (this.state.pack === undefined) {
+            return <div>Loading...</div>
+        } else {
+            var rbs: JSX.Element[] = [];
+            for (var texture of this.state.pack.textures) {
+                rbs.push(
+                    <TextureView.TextureComponent texture={texture} />
+                );
+            }
+
+            return (
+                <div>
+                    {rbs}
+                    <button type="button" /*onClick={_ => Zipper.createZip()}*/>Download</button>
+                </div>
+            )
+        }
+    }
 }
 
-export async function loadTexturePack(): Promise<TextureModel.Data.TexturePack> {
-  return new TextureModel.Data.TexturePack("/nsss-painterly-customizer/pack", fileStructure, meta.metadata);
+async function loadTexturePack(): Promise<TextureModel.Data.TexturePack> {
+    return new TextureModel.Data.TexturePack("/nsss-painterly-customizer/pack", fileStructure, meta.metadata);
 }
 
 export default App;

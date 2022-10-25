@@ -66,34 +66,35 @@ export namespace TextureModel {
     }
 
     export namespace Metadata {
-        export class Texture {
-            public filePath: string;
-            public prettyName: string = "";
-            public tilesX: number = 1;
-            public tilesY: number = 1;
+        export abstract class Texture {
+            public prettyName?: string = undefined;
+            public tilesX?: number = undefined;
+            public tilesY?: number = undefined;
             public alternates?: Alternate[];
+        }
+
+        export class FileTexture extends Texture {
+            public filePath: string;
             public subTextures?: SubTexture[];
 
             constructor(filePath: string) {
+                super();
                 this.filePath = filePath;
             }
         }
 
-        export class SubTexture {
+        export class SubTexture extends Texture {
             public index: number;
-            public prettyName: string = "";
-            public tilesX: number = 1;
-            public tilesY: number = 1;
-            public alternates?: Alternate[];
 
             constructor(index: number) {
+                super();
                 this.index = index;
             }
         }
 
         export class Alternate {
             public fileName: string;
-            public prettyName: string = "";
+            public prettyName?: string = undefined;
 
             constructor(fileName: string) {
                 this.fileName = fileName;
@@ -105,9 +106,9 @@ export namespace TextureModel {
         export class TexturePack {
             public file: FileStructure.TexturePackFile;
             public textures: Texture[] = [];
-            public metadatas: Metadata.Texture[];
+            public metadatas: Metadata.FileTexture[];
 
-            constructor(basePath: string, fileSystemMap: object, metadatas: Metadata.Texture[]) {
+            constructor(basePath: string, fileSystemMap: object, metadatas: Metadata.FileTexture[]) {
                 this.file = new FileStructure.TexturePackFile(basePath, fileSystemMap);
                 this.metadatas = metadatas;
                 this.walkDirectory(this.file.rootDir);
@@ -129,7 +130,7 @@ export namespace TextureModel {
                                 this.textures.push(new SingleTexture(this, child, metadata));
                             }
                         } else {
-                            this.textures.push(new SingleTexture(this, child, new Metadata.Texture(child.getPath())))
+                            this.textures.push(new SingleTexture(this, child, new Metadata.FileTexture(child.getPath())))
                         }
                     }
                 }
@@ -149,7 +150,7 @@ export namespace TextureModel {
                         texturePath = item.texture.parentTexture.file.getPath();
                     }
 
-                    return altsPath + "/" + item.name;
+                    return altsPath + texturePath + "/" + item.name;
                 }
 
                 return "";
@@ -158,12 +159,14 @@ export namespace TextureModel {
 
         export abstract class Texture {
             public pack: TexturePack;
+            public metadata: Metadata.Texture;
 
             public width: number = 0;
             public height: number = 0;
 
-            constructor(pack: TexturePack) {
+            constructor(pack: TexturePack, metadata: Metadata.Texture) {
                 this.pack = pack;
+                this.metadata = metadata;
             }
         }
 
@@ -173,12 +176,10 @@ export namespace TextureModel {
 
         export abstract class FileTexture extends Texture {
             public file: FileStructure.TextureFile;
-            public metadata: Metadata.Texture;
 
-            constructor(pack: TexturePack, file: FileStructure.TextureFile, metadata: Metadata.Texture) {
-                super(pack);
+            constructor(pack: TexturePack, file: FileStructure.TextureFile, metadata: Metadata.FileTexture) {
+                super(pack, metadata);
                 this.file = file;
-                this.metadata = metadata;
                 this.getTextureDims();
             }
 
@@ -196,15 +197,23 @@ export namespace TextureModel {
         export class SingleTexture extends FileTexture implements HasAlternates {
             public alternates: AlternateTexture[] = [];
 
-            constructor(pack: TexturePack, file: FileStructure.TextureFile, metadata: Metadata.Texture) {
+            constructor(pack: TexturePack, file: FileStructure.TextureFile, metadata: Metadata.FileTexture) {
                 super(pack, file, metadata);
+
+                this.alternates.push(new AlternateTexture(pack, "0-default.png", this, { fileName: "0-default.png", prettyName: "Default"}));
+
+                if (metadata.alternates) {
+                    for (var alternate of metadata.alternates) {
+                        this.alternates.push(new AlternateTexture(pack, alternate.fileName, this, alternate));
+                    }
+                }
             }
         }
 
         export class TileMapTexture extends FileTexture {
             public subTextures: SubTexture[] = [];
 
-            constructor(pack: TexturePack, file: FileStructure.TextureFile, metadata: Metadata.Texture) {
+            constructor(pack: TexturePack, file: FileStructure.TextureFile, metadata: Metadata.FileTexture) {
                 super(pack, file, metadata);
 
                 if (metadata.subTextures) {
@@ -219,12 +228,12 @@ export namespace TextureModel {
         export class SubTexture extends Texture implements HasAlternates {
             public alternates: AlternateTexture[] = [];
             public parentTexture: TileMapTexture;
-            public metadata: Metadata.SubTexture;
 
             constructor(pack: TexturePack, parentTexture: TileMapTexture, metadata: Metadata.SubTexture) {
-                super(pack);
+                super(pack, metadata);
                 this.parentTexture = parentTexture;
-                this.metadata = metadata;
+
+                this.alternates.push(new AlternateTexture(pack, "0-default.png", this, { fileName: "0-default.png", prettyName: "Default"}));
 
                 if (metadata.alternates) {
                     for (var alternate of metadata.alternates) {
@@ -236,8 +245,8 @@ export namespace TextureModel {
             }
 
             protected getTextureDims() {
-                this.width = this.metadata.tilesX * this.parentTexture.metadata.tilesX;
-                this.height = this.metadata.tilesY * this.parentTexture.metadata.tilesY;
+                this.width = (this.metadata.tilesX ?? 1) * (this.parentTexture.metadata.tilesX ?? 1);
+                this.height = (this.metadata.tilesY ?? 1) * (this.parentTexture.metadata.tilesY ?? 1);
             }
         }
 

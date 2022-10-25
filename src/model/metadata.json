@@ -1,0 +1,37 @@
+{
+    "metadata": [
+        {
+            "filePath": "/armor/cloth_1.png",
+            "prettyName": "Leather Armor 1",
+            "alternates": [
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "Invisible"
+                },
+                {
+                    "fileName": "0-monocle.png",
+                    "prettyName": "Monocle"
+                }
+            ]
+        },
+        {
+            "filePath": "/art/kz.png",
+            "prettyName": "Paintings",
+            "alternates": [
+                {
+                    "fileName": "0-abstract.png",
+                    "prettyName": "Abstract"
+                },
+                {
+                    "fileName": "0-surreal.png",
+                    "prettyName": "Surreal"
+                }
+            ]
+        },
+        {
+            "filePath": "/terrain.png",
+            "prettyName": "Terrain"
+
+        }
+    ]
+}
