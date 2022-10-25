@@ -30,8 +30,43 @@
         },
         {
             "filePath": "/terrain.png",
-            "prettyName": "Terrain"
-
+            "prettyName": "Terrain",
+            "subTextures": [
+                {
+                    "index": 0,
+                    "prettyName": "Grass Top",
+                    "alternates": [
+                        {
+                            "fileName": "0-darkgreen.png",
+                            "prettyName": "Dark Green"
+                        },
+                        {
+                            "fileName": "0-dead.png",
+                            "prettyName": "Dead"
+                        },
+                        {
+                            "fileName": "0-green.png",
+                            "prettyName": "Green"
+                        },
+                        {
+                            "fileName": "0-olive.png",
+                            "prettyName": "Olive"
+                        },
+                        {
+                            "fileName": "0-red.png",
+                            "prettyName": "Red"
+                        },
+                        {
+                            "fileName": "0-yellow.png",
+                            "prettyName": "Yellow"
+                        }
+                    ]
+                },
+                {
+                    "index": 1,
+                    "prettyName": "Stone"
+                }
+            ]
         }
     ]
 }

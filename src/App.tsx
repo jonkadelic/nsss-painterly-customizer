@@ -6,6 +6,7 @@ import { TextureModel } from './model/texturemodel'
 import fileStructure from './model/fs.json'
 import meta from './model/metadata.json'
 import { TextureView } from './view/textureview';
+import { TexturePresenter } from "./presenter/texturepresenter"
 
 class App extends React.Component<{
 }, {
@@ -15,7 +16,9 @@ class App extends React.Component<{
         super(props);
 
         this.state = {pack: undefined};
+    }
 
+    componentDidMount() {
         loadTexturePack().then(pack => {
             this.setState({pack: pack});
         });
@@ -25,16 +28,11 @@ class App extends React.Component<{
         if (this.state.pack === undefined) {
             return <div>Loading...</div>
         } else {
-            var rbs: JSX.Element[] = [];
-            for (var texture of this.state.pack.textures) {
-                rbs.push(
-                    <TextureView.TextureComponent texture={texture} />
-                );
-            }
+            var packPresenter = new TexturePresenter.TexturePackPresenter(this.state.pack);
 
             return (
                 <div>
-                    {rbs}
+                    <TextureView.TexturePackView presenter={packPresenter}/>
                     <button type="button" /*onClick={_ => Zipper.createZip()}*/>Download</button>
                 </div>
             )

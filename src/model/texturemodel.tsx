@@ -172,6 +172,7 @@ export namespace TextureModel {
 
         export interface HasAlternates {
             alternates: AlternateTexture[];
+            selectedAlternate: AlternateTexture;
         }
 
         export abstract class FileTexture extends Texture {
@@ -196,11 +197,13 @@ export namespace TextureModel {
 
         export class SingleTexture extends FileTexture implements HasAlternates {
             public alternates: AlternateTexture[] = [];
+            public selectedAlternate: AlternateTexture;
 
             constructor(pack: TexturePack, file: FileStructure.TextureFile, metadata: Metadata.FileTexture) {
                 super(pack, file, metadata);
 
-                this.alternates.push(new AlternateTexture(pack, "0-default.png", this, { fileName: "0-default.png", prettyName: "Default"}));
+                this.selectedAlternate = new AlternateTexture(pack, "0-default.png", this, { fileName: "0-default.png", prettyName: "Default"});
+                this.alternates.push(this.selectedAlternate);
 
                 if (metadata.alternates) {
                     for (var alternate of metadata.alternates) {
@@ -227,13 +230,15 @@ export namespace TextureModel {
 
         export class SubTexture extends Texture implements HasAlternates {
             public alternates: AlternateTexture[] = [];
+            public selectedAlternate: AlternateTexture;
             public parentTexture: TileMapTexture;
 
             constructor(pack: TexturePack, parentTexture: TileMapTexture, metadata: Metadata.SubTexture) {
                 super(pack, metadata);
                 this.parentTexture = parentTexture;
 
-                this.alternates.push(new AlternateTexture(pack, "0-default.png", this, { fileName: "0-default.png", prettyName: "Default"}));
+                this.selectedAlternate = new AlternateTexture(pack, metadata.index + "-default.png", this, { fileName: metadata.index + "-default.png", prettyName: "Default"});
+                this.alternates.push(this.selectedAlternate);
 
                 if (metadata.alternates) {
                     for (var alternate of metadata.alternates) {

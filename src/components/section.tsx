@@ -21,7 +21,7 @@ export namespace Section {
             if (this.props.headerLevel == 1) {
                 headerElement = <h1 className="text-4xl font-bold" onClick={it => this.setState({expanded: !this.state.expanded})} style={noselect}>{this.state.expanded ? "˄" : "˅"} {this.props.header}</h1>
             } else {
-                headerElement = <h2 className="text-2xl font-bold" onClick={it => this.setState({expanded: !this.state.expanded})} style={noselect}>{this.state.expanded ? "˄" : "˅"} {this.props.header}</h2>
+                headerElement = <h2 className="text-3xl font-bold" onClick={it => this.setState({expanded: !this.state.expanded})} style={noselect}>{this.state.expanded ? "˄" : "˅"} {this.props.header}</h2>
             }
 
             return ( 

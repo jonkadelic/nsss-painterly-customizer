@@ -1,10 +1,125 @@
 import React from 'react';
 import { TextureModel } from '../model/texturemodel';
 import { Section } from '../components/section'
+import { Composer } from '../util/composer'
+import { TexturePresenter } from "../presenter/texturepresenter"
 
 export namespace TextureView {
-    export class TextureIconComponent extends React.Component<{
-        texture: TextureModel.Data.AlternateTexture;
+    export class TexturePackView extends React.Component<{
+        presenter: TexturePresenter.TexturePackPresenter
+    }> {
+        render(): React.ReactNode {
+            var views: any[] = [];
+
+            for (var presenter of this.props.presenter.presenters) {
+                if (presenter instanceof TexturePresenter.SingleTexturePresenter) {
+                    views.push(<SingleTextureView presenter={presenter}/>);
+                } else if (presenter instanceof TexturePresenter.TileMapTexturePresenter) {
+                    views.push(<TileMapTextureView presenter={presenter}/>);
+                }
+            }
+
+            return (
+                <div>
+                    {views}
+                </div>
+            )
+        }
+    }
+
+    export class SingleTextureView extends React.Component<{
+        presenter: TexturePresenter.SingleTexturePresenter
+    }> {
+        render(): React.ReactNode {
+            return (
+                <Section.CollapsibleSection header={this.props.presenter.header} headerLevel={1}>
+                    <TextureAlternatesView presenter={this.props.presenter.alternates}/>
+                </Section.CollapsibleSection>
+            )
+        }
+    }
+
+    export class TileMapTextureView extends React.Component<{
+        presenter: TexturePresenter.TileMapTexturePresenter
+    }> {
+        render(): React.ReactNode {
+            var stvs: JSX.Element[] = [];
+
+            for (var stp of this.props.presenter.presenters) {
+                stvs.push(<SubTextureView presenter={stp}/>);
+            }
+
+            return(
+                <Section.CollapsibleSection header={this.props.presenter.header} headerLevel={1}>
+                    <div>
+                        {stvs}
+                    </div>
+                </Section.CollapsibleSection>
+            )
+        }
+    }
+
+    export class SubTextureView extends React.Component<{
+        presenter: TexturePresenter.SubTexturePresenter
+    }> {
+        render(): React.ReactNode {
+            return (
+                <Section.CollapsibleSection header={this.props.presenter.header} headerLevel={2}>
+                    <TextureAlternatesView presenter={this.props.presenter.alternates}/>
+                </Section.CollapsibleSection>
+            )
+        }
+    }
+
+    export class TextureAlternatesView extends React.Component<{
+        presenter: TexturePresenter.TextureAlternatesPresenter
+    }> {
+        render(): React.ReactNode {
+            return (
+                <div className="grid grid-cols-2 gap-4" style={{maxWidth: "768px"}}>
+                    <TextureLeftHandPickerComponent presenter={this.props.presenter} iconSrcs={this.props.presenter.iconSrcs}/>
+                    <TextureRightHandPreviewComponent presenter={this.props.presenter} previewSrc={this.props.presenter.previewSrc}/>
+                </div>
+            )
+        }
+    }
+
+    class TextureLeftHandPickerComponent extends React.Component<{
+        presenter: TexturePresenter.TextureAlternatesPresenter;
+        iconSrcs: string[];
+    }> {
+        render(): React.ReactNode {
+            var tics: any[] = [];
+
+            for (var i = 0; i < this.props.iconSrcs.length; i++) {
+                tics.push(<TextureIconComponent presenter={this.props.presenter} imgSrc={this.props.iconSrcs[i]} index={i}/>);
+            }
+
+            return (
+                <div>
+                    {tics}
+                </div>
+            )
+        }
+    }
+
+    class TextureRightHandPreviewComponent extends React.Component<{
+        presenter: TexturePresenter.TextureAlternatesPresenter;
+        previewSrc: string;
+    }> {
+        render(): React.ReactNode {
+            return (
+                <div style={{width:"512px", marginLeft:"auto", marginRight:"0px", display:"block"}}>
+                    <img src={this.props.previewSrc} style={{imageRendering: "pixelated", width:"100%"}}/>
+                </div>
+            )
+        }
+    }
+
+    class TextureIconComponent extends React.Component<{
+        presenter: TexturePresenter.TextureAlternatesPresenter;
+        index: number;
+        imgSrc: string;
     }> {
         render(): React.ReactNode {
             const imageStyle: React.CSSProperties = {
@@ -14,68 +129,9 @@ export namespace TextureView {
                 margin: 5
             };
             return (
-                <img src={this.props.texture.pack.getFullUrl(this.props.texture)} width={48} height={48} onClick={_ => handleTextureClick(this.props.texture)} style={imageStyle}/>
+                <img src={this.props.imgSrc} width={48} height={48} onClick={_ => this.props.presenter.onSelectedTextureChangedAsync(this.props.index)} style={imageStyle}/>
             );
         }
-    }
 
-    function handleTextureClick(texture: TextureModel.Data.AlternateTexture) {
-
-    }
-
-    export class TextureListComponent extends React.Component<{
-        textures: TextureModel.Data.AlternateTexture[]
-    }> {
-        render(): React.ReactNode {
-            return (
-                <div>
-                    {this.props.textures.map(it => <TextureIconComponent texture={it}/>)}
-                </div>
-            );
-        }
-    }
-
-    export class TextureComponent extends React.Component<{
-        texture: TextureModel.Data.Texture
-    }> {
-        render(): React.ReactNode {
-            var inner: JSX.Element = <div></div>;
-
-            if (this.props.texture instanceof TextureModel.Data.SingleTexture || this.props.texture instanceof TextureModel.Data.SubTexture) {
-                inner = <TextureListComponent textures={this.props.texture.alternates}/>
-            } else if (this.props.texture instanceof TextureModel.Data.TileMapTexture) {
-                inner = (<div>
-                    {this.props.texture.subTextures.map(it => <TextureComponent texture={it}/>)}
-                </div>);
-            }
-            var name = this.props.texture.metadata.prettyName;
-            if (name === undefined) {
-                if (this.props.texture instanceof TextureModel.Data.FileTexture) {
-                    name = this.props.texture.file.getPath();
-                } else {
-                    name = "eeee";
-                }
-            }
-            var path: JSX.Element | undefined;
-            if (this.props.texture.metadata.prettyName != undefined && this.props.texture instanceof TextureModel.Data.FileTexture) {
-                path = <p>{this.props.texture.file.getPath()}</p>
-            }
-
-            return (
-                <Section.CollapsibleSection header={name} headerLevel={1}>
-                    <div>
-                        {path}
-                        <div className="grid grid-cols-2 gap-4" style={{maxWidth: "768px"}}>
-                            <div>
-                                {inner}
-                            </div>
-                            <div style={{width:"400px", marginLeft:"auto", marginRight:"0px", display:"block"}}>
-                                <img src={this.props.texture.pack.getFullUrl(this.props.texture as TextureModel.Data.SingleTexture)} style={{imageRendering: "pixelated", width:"100%"}}/>
-                            </div>
-                        </div>
-                    </div>
-                </Section.CollapsibleSection>
-            );
-        }
     }
 }
