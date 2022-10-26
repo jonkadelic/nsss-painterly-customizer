@@ -51,8 +51,10 @@ export namespace TextureView {
 
             return(
                 <Section.CollapsibleSection header={this.props.presenter.header} headerLevel={1}>
-                    <div>
-                        {stvs}
+                    <div className="grid grid-cols-2 gap-4" style={{maxWidth: "768px"}}>
+                        <div>
+                            {stvs}
+                        </div>
                     </div>
                 </Section.CollapsibleSection>
             )
@@ -78,7 +80,7 @@ export namespace TextureView {
             return (
                 <div className="grid grid-cols-2 gap-4" style={{maxWidth: "768px"}}>
                     <TextureLeftHandPickerComponent presenter={this.props.presenter} iconSrcs={this.props.presenter.iconSrcs}/>
-                    <TextureRightHandPreviewComponent presenter={this.props.presenter} previewSrc={this.props.presenter.previewSrc}/>
+                    <TextureRightHandPreviewComponent presenter={this.props.presenter}/>
                 </div>
             )
         }
@@ -105,12 +107,23 @@ export namespace TextureView {
 
     class TextureRightHandPreviewComponent extends React.Component<{
         presenter: TexturePresenter.TextureAlternatesPresenter;
-        previewSrc: string;
+    }, {
+        previewSrc: string
     }> {
+        constructor(props: any) {
+            super(props);
+
+            this.state = {previewSrc: this.props.presenter.previewSrc};
+        }
+
+        componentDidMount() {
+            this.props.presenter.updatePreviewCallback = () => { this.setState({previewSrc: this.props.presenter.previewSrc}) };
+        }
+
         render(): React.ReactNode {
             return (
                 <div style={{width:"512px", marginLeft:"auto", marginRight:"0px", display:"block"}}>
-                    <img src={this.props.previewSrc} style={{imageRendering: "pixelated", width:"100%"}}/>
+                    <img src={this.state.previewSrc} style={{imageRendering: "pixelated", width:"100%"}}/>
                 </div>
             )
         }

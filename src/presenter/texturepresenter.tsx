@@ -32,7 +32,7 @@ export namespace TexturePresenter {
     interface HasAlternates {
         alternates: TextureAlternatesPresenter;
 
-        setSelectedAlternate(index: number): void;
+        setSelectedAlternateAsync(index: number): Promise<void>;
     }
     
     export class SingleTexturePresenter implements TexturePresenter, HasAlternates {
@@ -56,8 +56,9 @@ export namespace TexturePresenter {
             this.previewSrc = texture.pack.getFullUrl(texture.selectedAlternate);
         }
 
-        setSelectedAlternate(index: number): void {
+        async setSelectedAlternateAsync(index: number): Promise<void> {
             this.texture.selectedAlternate = this.texture.alternates[index];
+            this.previewSrc = this.texture.pack.getFullUrl(this.texture.selectedAlternate);
         }
     }
 
@@ -77,18 +78,29 @@ export namespace TexturePresenter {
                 this.header = texture.file.getPath();
             }
 
-            this.presenters = texture.subTextures.map(it => new SubTexturePresenter(it));
+            this.presenters = texture.subTextures.map(it => new SubTexturePresenter(this, it));
+
+            this.loadPreviewSrc();
+        }
+
+        public async loadPreviewSrc() {
+            var blob = await Composer.composeTileImage(this.texture);
+            var url = URL.createObjectURL(blob);
+
+            this.previewSrc = url;
         }
     }
 
     export class SubTexturePresenter implements TexturePresenter, HasAlternates {
+        public parent: TileMapTexturePresenter;
         public texture: TextureModel.Data.SubTexture;
 
         public alternates: TextureAlternatesPresenter;
         public header: string;
         public previewSrc: string = "";
 
-        constructor(texture: TextureModel.Data.SubTexture) {
+        constructor(parent: TileMapTexturePresenter, texture: TextureModel.Data.SubTexture) {
+            this.parent = parent;
             this.texture = texture;
 
             this.alternates = new TextureAlternatesPresenter(this, texture.alternates);
@@ -102,8 +114,10 @@ export namespace TexturePresenter {
             this.previewSrc = texture.pack.getFullUrl(texture.selectedAlternate);
         }
 
-        setSelectedAlternate(index: number): void {
+        async setSelectedAlternateAsync(index: number): Promise<void> {
             this.texture.selectedAlternate = this.texture.alternates[index];
+            this.previewSrc = this.texture.pack.getFullUrl(this.texture.selectedAlternate);
+            await this.parent.loadPreviewSrc();
         }
     }
 
@@ -114,6 +128,7 @@ export namespace TexturePresenter {
         public get previewSrc(): string {
             return this.parent.previewSrc;
         }
+        public updatePreviewCallback?: () => void
 
         constructor(parent: TexturePresenter & HasAlternates, textures: TextureModel.Data.AlternateTexture[]) {
             this.parent = parent;
@@ -123,7 +138,8 @@ export namespace TexturePresenter {
         }
 
         public async onSelectedTextureChangedAsync(index: number) {
-            this.parent.setSelectedAlternate(index);
+            await this.parent.setSelectedAlternateAsync(index);
+            if (this.updatePreviewCallback) this.updatePreviewCallback();
         }
     }
 }
