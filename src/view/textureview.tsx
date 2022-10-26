@@ -20,7 +20,7 @@ export namespace TextureView {
             }
 
             return (
-                <div>
+                <div style={{maxWidth: "1024px"}}>
                     {views}
                 </div>
             )
@@ -51,13 +51,18 @@ export namespace TextureView {
 
             return(
                 <Section.CollapsibleSection header={this.props.presenter.header} headerLevel={1}>
-                    <div className="grid grid-cols-2 gap-4" style={{maxWidth: "768px"}}>
+                    <div className="grid grid-cols-2 gap-4">
                         <div>
                             {stvs}
                         </div>
+                        <TextureRightHandPreviewComponent previewable={this.props.presenter}/>
                     </div>
                 </Section.CollapsibleSection>
             )
+        }
+
+        componentDidMount(): void {
+            this.props.presenter.updatePreviewAsync();
         }
     }
 
@@ -78,9 +83,9 @@ export namespace TextureView {
     }> {
         render(): React.ReactNode {
             return (
-                <div className="grid grid-cols-2 gap-4" style={{maxWidth: "768px"}}>
+                <div className="grid grid-cols-2 gap-4">
                     <TextureLeftHandPickerComponent presenter={this.props.presenter} iconSrcs={this.props.presenter.iconSrcs}/>
-                    <TextureRightHandPreviewComponent presenter={this.props.presenter}/>
+                    <TextureRightHandPreviewComponent previewable={this.props.presenter.parent}/>
                 </div>
             )
         }
@@ -106,24 +111,24 @@ export namespace TextureView {
     }
 
     class TextureRightHandPreviewComponent extends React.Component<{
-        presenter: TexturePresenter.TextureAlternatesPresenter;
+        previewable: TexturePresenter.Previewable;
     }, {
         previewSrc: string
     }> {
         constructor(props: any) {
             super(props);
 
-            this.state = {previewSrc: this.props.presenter.previewSrc};
+            this.state = {previewSrc: this.props.previewable.previewSrc};
         }
 
         componentDidMount() {
-            this.props.presenter.updatePreviewCallback = () => { this.setState({previewSrc: this.props.presenter.previewSrc}) };
+            this.props.previewable.updatePreviewCallback = () => { this.setState({previewSrc: this.props.previewable.previewSrc}) };
         }
 
         render(): React.ReactNode {
             return (
-                <div style={{width:"512px", marginLeft:"auto", marginRight:"0px", display:"block"}}>
-                    <img src={this.state.previewSrc} style={{imageRendering: "pixelated", width:"100%"}}/>
+                <div style={{maxWidth:"512px", maxHeight:"512px", marginLeft:"0px", marginRight:"0px", display:"block"}}>
+                    <img src={this.state.previewSrc} style={{imageRendering: "pixelated", width:"100%", objectFit:"contain", maxHeight:"512px"}}/>
                 </div>
             )
         }

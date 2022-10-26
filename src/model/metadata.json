@@ -1,18 +1,60 @@
 {
     "metadata": [
         {
-            "filePath": "/armor/cloth_1.png",
-            "prettyName": "Leather Armor 1",
+            "filePath": "/shadow.png",
+            "prettyName": "Shadow"
+        },
+        {
+            "filePath": "/clouds.png",
+            "prettyName": "Clouds",
             "alternates": [
                 {
-                    "fileName": "0-blank.png",
-                    "prettyName": "Invisible"
+                    "fileName": "0-clouds.png",
+                    "prettyName": "No clouds"
                 },
                 {
-                    "fileName": "0-monocle.png",
-                    "prettyName": "Monocle"
+                    "fileName": "0-lightclouds.png",
+                    "prettyName": "Light clouds"
                 }
             ]
+        },
+        {
+            "filePath": "/terrain/sun.png",
+            "prettyName": "Sun"
+        },
+        {
+            "filePath": "/terrain/moon.png",
+            "prettyName": "Moon",
+            "alternates": [
+                {
+                    "fileName": "0-moon.png",
+                    "prettyName": "3-creeper moon"
+                },
+                {
+                    "fileName": "0-moon2.png",
+                    "prettyName": "Crescent moon"
+                }
+            ]
+        },
+        {
+            "filePath": "/water.png",
+            "prettyName": "Water overlay"
+        },
+        {
+            "filePath": "/item/cart.png",
+            "prettyName": "Minecart"
+        },
+        {
+            "filePath": "/item/boat.png",
+            "prettyName": "Boat"
+        },
+        {
+            "filePath": "/item/sign.png",
+            "prettyName": "Sign"
+        },
+        {
+            "filePath": "/rock.png",
+            "prettyName": "Rock background"
         },
         {
             "filePath": "/art/kz.png",
@@ -29,42 +71,1464 @@
             ]
         },
         {
-            "filePath": "/terrain.png",
-            "prettyName": "Terrain",
+            "filePath": "/dirt.png",
+            "prettyName": "Dirt background"
+        },
+        {
+            "filePath": "/grass.png",
+            "prettyName": "Grass background"
+        },
+        {
+            "filePath": "/gui/items.png",
+            "prettyName": "Items",
+            "tilesX": 16,
+            "tilesY": 16,
             "subTextures": [
                 {
                     "index": 0,
-                    "prettyName": "Grass Top",
+                    "prettyName": "Leather armour"
+                },
+                {
+                    "index": 1,
+                    "prettyName": "Chainmail armour"
+                },
+                {
+                    "index": 2,
+                    "prettyName": "Iron armour"
+                },
+                {
+                    "index": 3,
+                    "prettyName": "Diamond armour"
+                },
+                {
+                    "index": 4,
+                    "prettyName": "Gold armour",
+                    "alternates": [
+                        {
+                            "fileName": "4-kinglyarmor.png",
+                            "prettyName": "Kingly armour"
+                        }
+                    ]
+                },
+                {
+                    "index": 5,
+                    "prettyName": "Flint and steel",
+                    "alternates": [
+                        {
+                            "fileName": "5-flintandsteel.png",
+                            "prettyName": "Alternate flint"
+                        }
+                    ]
+                },
+                {
+                    "index": 6,
+                    "prettyName": "Flint",
+                    "alternates": [
+                        {
+                            "fileName": "6-flint.png",
+                            "prettyName": "Alternate flint"
+                        }
+                    ]
+                },
+                {
+                    "index": 7,
+                    "prettyName": "Coal"
+                },
+                {
+                    "index": 8,
+                    "prettyName": "String"
+                },
+                {
+                    "index": 9,
+                    "prettyName": "Seed"
+                },
+                {
+                    "index": 10,
+                    "prettyName": "Red apple"
+                },
+                {
+                    "index": 11,
+                    "prettyName": "Golden apple"
+                },
+                {
+                    "index": 12,
+                    "prettyName": "Egg"
+                },
+                {
+                    "index": 14,
+                    "prettyName": "Snowball"
+                },
+                {
+                    "index": 15,
+                    "prettyName": "Armour placeholders"
+                },
+                {
+                    "index": 21,
+                    "prettyName": "Bow"
+                },
+                {
+                    "index": 22,
+                    "prettyName": "Brick",
+                    "alternates": [
+                        {
+                            "fileName": "22-claybrick.png",
+                            "prettyName": "Blue-grey brick"
+                        }
+                    ]
+                },
+                {
+                    "index": 23,
+                    "prettyName": "Iron ingot"
+                },
+                {
+                    "index": 24,
+                    "prettyName": "Feather"
+                },
+                {
+                    "index": 25,
+                    "prettyName": "Wheat",
+                    "alternates": [
+                        {
+                            "fileName": "25-pumpkinspooky.png",
+                            "prettyName": "Spooky pumpkins"
+                        },
+                        {
+                            "fileName": "25-candycorn.png",
+                            "prettyName": "Candy corn"
+                        },
+                        {
+                            "fileName": "25-pumpkin.png",
+                            "prettyName": "Pumpkins"
+                        }
+                    ]
+                },
+                {
+                    "index": 26,
+                    "prettyName": "Painting",
+                    "alternates": [
+                        {
+                            "fileName": "26-pastelpainting.png",
+                            "prettyName": "Pastel painting"
+                        }
+                    ]
+                },
+                {
+                    "index": 27,
+                    "prettyName": "Reeds",
+                    "alternates": [
+                        {
+                            "fileName": "27-cornhusk.png",
+                            "prettyName": "Corn husk"
+                        }
+                    ]
+                },
+                {
+                    "index": 28,
+                    "prettyName": "Filament"
+                },
+                {
+                    "index": 30,
+                    "prettyName": "Slime ball"
+                },
+                {
+                    "index": 37,
+                    "prettyName": "Arrow"
+                },
+                {
+                    "index": 38,
+                    "prettyName": "Quiver"
+                },
+                {
+                    "index": 39,
+                    "prettyName": "Gold ingot"
+                },
+                {
+                    "index": 40,
+                    "prettyName": "Gunpowder",
+                    "alternates": [
+                        {
+                            "fileName": "40-tntstick.png",
+                            "prettyName": "TNT stick"
+                        },
+                        {
+                            "fileName": "40-creeperbomb.png",
+                            "prettyName": "Creeper bomb"
+                        },
+                        {
+                            "fileName": "40-darkgunpowder.png",
+                            "prettyName": "Dark gunpowder"
+                        }
+                    ]
+                },
+                {
+                    "index": 41,
+                    "prettyName": "Bread",
+                    "alternates": [
+                        {
+                            "fileName": "41-treatbag.png",
+                            "prettyName": "Treat bag"
+                        },
+                        {
+                            "fileName": "41-pumpkinpie.png",
+                            "prettyName": "Pumpkin pie"
+                        }
+                    ]
+                },
+                {
+                    "index": 42,
+                    "prettyName": "Sign"
+                },
+                {
+                    "index": 43,
+                    "prettyName": "Wooden door",
+                    "alternates": [
+                        {
+                            "fileName": "43-doorpanel.png",
+                            "prettyName": "Panel door"
+                        },
+                        {
+                            "fileName": "43-doorred.png",
+                            "prettyName": "Red door"
+                        }
+                    ]
+                },
+                {
+                    "index": 44,
+                    "prettyName": "Iron door",
+                    "alternates": [
+                        {
+                            "fileName": "44-jaildoor.png",
+                            "prettyName": "Jail door"
+                        },
+                        {
+                            "fileName": "44-vaultdoor.png",
+                            "prettyName": "Vault door"
+                        }
+                    ]
+                },
+                {
+                    "index": 53,
+                    "prettyName": "Stick"
+                },
+                {
+                    "index": 54,
+                    "prettyName": "Compass",
+                    "alternates": [
+                        {
+                            "fileName": "54-colourblindcompass.png",
+                            "prettyName": "Colourblind-friendly compass"
+                        }
+                    ]
+                },
+                {
+                    "index": 55,
+                    "prettyName": "Diamond",
+                    "alternates": [
+                        {
+                            "fileName": "55-diamondsuper.png",
+                            "prettyName": "Chaos Emerald"
+                        },
+                        {
+                            "fileName": "55-diamondcluster.png",
+                            "prettyName": "Diamond cluster"
+                        }
+                    ]
+                },
+                {
+                    "index": 56,
+                    "prettyName": "Redstone dust",
+                    "alternates": [
+                        {
+                            "fileName": "56-redstonegem.png",
+                            "prettyName": "Gem"
+                        }
+                    ]
+                },
+                {
+                    "index": 57,
+                    "prettyName": "Clay",
+                    "alternates": [
+                        {
+                            "fileName": "57-claywad.png",
+                            "prettyName": "Blue-grey clay"
+                        }
+                    ]
+                },
+                {
+                    "index": 58,
+                    "prettyName": "Paper"
+                },
+                {
+                    "index": 59,
+                    "prettyName": "Book"
+                },
+                {
+                    "index": 64,
+                    "prettyName": "Wooden tools"
+                },
+                {
+                    "index": 65,
+                    "prettyName": "Stone tools"
+                },
+                {
+                    "index": 66,
+                    "prettyName": "Iron tools"
+                },
+                {
+                    "index": 67,
+                    "prettyName": "Diamond tools"
+                },
+                {
+                    "index": 68,
+                    "prettyName": "Gold tools",
+                    "alternates": [
+                        {
+                            "fileName": "68-kinglytools.png",
+                            "prettyName": "Kingly tools"
+                        }
+                    ]
+                },
+                {
+                    "index": 69,
+                    "prettyName": "Fishing rod"
+                },
+                {
+                    "index": 71,
+                    "prettyName": "Bowl and soup"
+                },
+                {
+                    "index": 73,
+                    "prettyName": "Copper ingot"
+                },
+                {
+                    "index": 74,
+                    "prettyName": "Buckets",
+                    "alternates": [
+                        {
+                            "fileName": "74-pumpkinpails.png",
+                            "prettyName": "Pumpkin pails"
+                        }
+                    ]
+                },
+                {
+                    "index": 78,
+                    "prettyName": "Dyes"
+                },
+                {
+                    "index": 85,
+                    "prettyName": "Obsidian tools"
+                },
+                {
+                    "index": 87,
+                    "prettyName": "Pork",
+                    "alternates": [
+                        {
+                            "fileName": "87-facon.png",
+                            "prettyName": "Facon"
+                        }
+                    ]
+                },
+                {
+                    "index": 89,
+                    "prettyName": "Fish"
+                },
+                {
+                    "index": 103,
+                    "prettyName": "Leather"
+                },
+                {
+                    "index": 104,
+                    "prettyName": "Saddle"
+                },
+                {
+                    "index": 135,
+                    "prettyName": "Minecarts"
+                },
+                {
+                    "index": 136,
+                    "prettyName": "Boat"
+                },
+                {
+                    "index": 144,
+                    "prettyName": "Sponge armour"
+                },
+                {
+                    "index": 206,
+                    "prettyName": "Bone"
+                },
+                {
+                    "index": 240,
+                    "prettyName": "Records"
+                }
+            ]
+        },
+        {
+            "filePath": "/gui/icons.png",
+            "prettyName": "icons.png"
+        },
+        {
+            "filePath": "/gui/gui.png",
+            "prettyName": "gui.png"
+        },
+        {
+            "filePath": "/gui/inventory.png",
+            "prettyName": "inventory.png",
+            "alternates": [
+                {
+                    "fileName": "0-creeper.png",
+                    "prettyName": "0-creeper.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/gui/crafting.png",
+            "prettyName": "crafting.png"
+        },
+        {
+            "filePath": "/gui/container.png",
+            "prettyName": "container.png"
+        },
+        {
+            "filePath": "/gui/logo.png",
+            "prettyName": "logo.png"
+        },
+        {
+            "filePath": "/gui/furnace.png",
+            "prettyName": "furnace.png",
+            "alternates": [
+                {
+                    "fileName": "0-noblueprints.png",
+                    "prettyName": "0-noblueprints.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/terrain.png",
+            "prettyName": "terrain.png",
+            "tilesX": 16,
+            "tilesY": 16,
+            "subTextures": [
+                {
+                    "index": 0,
+                    "prettyName": "0",
                     "alternates": [
                         {
                             "fileName": "0-darkgreen.png",
-                            "prettyName": "Dark Green"
-                        },
-                        {
-                            "fileName": "0-dead.png",
-                            "prettyName": "Dead"
-                        },
-                        {
-                            "fileName": "0-green.png",
-                            "prettyName": "Green"
-                        },
-                        {
-                            "fileName": "0-olive.png",
-                            "prettyName": "Olive"
+                            "prettyName": "0-darkgreen.png"
                         },
                         {
                             "fileName": "0-red.png",
-                            "prettyName": "Red"
+                            "prettyName": "0-red.png"
+                        },
+                        {
+                            "fileName": "0-olive.png",
+                            "prettyName": "0-olive.png"
+                        },
+                        {
+                            "fileName": "0-deaddark.png",
+                            "prettyName": "0-deaddark.png"
+                        },
+                        {
+                            "fileName": "0-dead.png",
+                            "prettyName": "0-dead.png"
                         },
                         {
                             "fileName": "0-yellow.png",
-                            "prettyName": "Yellow"
+                            "prettyName": "0-yellow.png"
+                        },
+                        {
+                            "fileName": "0-green.png",
+                            "prettyName": "0-green.png"
                         }
                     ]
                 },
                 {
                     "index": 1,
-                    "prettyName": "Stone"
+                    "prettyName": "1"
+                },
+                {
+                    "index": 2,
+                    "prettyName": "2"
+                },
+                {
+                    "index": 3,
+                    "prettyName": "3",
+                    "alternates": [
+                        {
+                            "fileName": "3-longgrassyellow.png",
+                            "prettyName": "3-longgrassyellow.png"
+                        },
+                        {
+                            "fileName": "3-ledgegreen.png",
+                            "prettyName": "3-ledgegreen.png"
+                        },
+                        {
+                            "fileName": "3-ledgedeaddark.png",
+                            "prettyName": "3-ledgedeaddark.png"
+                        },
+                        {
+                            "fileName": "3-longgrassdead.png",
+                            "prettyName": "3-longgrassdead.png"
+                        },
+                        {
+                            "fileName": "3-longgrassdarkgreen.png",
+                            "prettyName": "3-longgrassdarkgreen.png"
+                        },
+                        {
+                            "fileName": "3-ledgeyellow.png",
+                            "prettyName": "3-ledgeyellow.png"
+                        },
+                        {
+                            "fileName": "3-ledgered.png",
+                            "prettyName": "3-ledgered.png"
+                        },
+                        {
+                            "fileName": "3-longgrassolive.png",
+                            "prettyName": "3-longgrassolive.png"
+                        },
+                        {
+                            "fileName": "3-longgrassgreen.png",
+                            "prettyName": "3-longgrassgreen.png"
+                        },
+                        {
+                            "fileName": "3-ledgeolive.png",
+                            "prettyName": "3-ledgeolive.png"
+                        },
+                        {
+                            "fileName": "3-ledgedarkgreen.png",
+                            "prettyName": "3-ledgedarkgreen.png"
+                        },
+                        {
+                            "fileName": "3-longgrass.png",
+                            "prettyName": "3-longgrass.png"
+                        },
+                        {
+                            "fileName": "3-ledgedead.png",
+                            "prettyName": "3-ledgedead.png"
+                        },
+                        {
+                            "fileName": "3-longgrassdeaddark.png",
+                            "prettyName": "3-longgrassdeaddark.png"
+                        },
+                        {
+                            "fileName": "3-longgrassred.png",
+                            "prettyName": "3-longgrassred.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 4,
+                    "prettyName": "4",
+                    "alternates": [
+                        {
+                            "fileName": "4-lightwood.png",
+                            "prettyName": "4-lightwood.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 5,
+                    "prettyName": "5",
+                    "alternates": [
+                        {
+                            "fileName": "5-halfbrickcobblebrick.png",
+                            "prettyName": "5-halfbrickcobblebrick.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickstump.png",
+                            "prettyName": "5-halfbrickstump.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickhalfcobble.png",
+                            "prettyName": "5-halfbrickhalfcobble.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickstone.png",
+                            "prettyName": "5-halfbrickstone.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickcobble.png",
+                            "prettyName": "5-halfbrickcobble.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickredbricks.png",
+                            "prettyName": "5-halfbrickredbricks.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickbluegreybricks.png",
+                            "prettyName": "5-halfbrickbluegreybricks.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickbooks.png",
+                            "prettyName": "5-halfbrickbooks.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickquilt.png",
+                            "prettyName": "5-halfbrickquilt.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickmarkerstone.png",
+                            "prettyName": "5-halfbrickmarkerstone.png"
+                        },
+                        {
+                            "fileName": "5-halfbrickwood.png",
+                            "prettyName": "5-halfbrickwood.png"
+                        },
+                        {
+                            "fileName": "5-halfbricklightwood.png",
+                            "prettyName": "5-halfbricklightwood.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 7,
+                    "prettyName": "7",
+                    "alternates": [
+                        {
+                            "fileName": "7-claybrick.png",
+                            "prettyName": "7-claybrick.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 8,
+                    "prettyName": "8",
+                    "alternates": [
+                        {
+                            "fileName": "8-creeperbombskull.png",
+                            "prettyName": "8-creeperbombskull.png"
+                        },
+                        {
+                            "fileName": "8-creeperbomb.png",
+                            "prettyName": "8-creeperbomb.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 11,
+                    "prettyName": "11"
+                },
+                {
+                    "index": 12,
+                    "prettyName": "12",
+                    "alternates": [
+                        {
+                            "fileName": "12-flowershrub.png",
+                            "prettyName": "12-flowershrub.png"
+                        },
+                        {
+                            "fileName": "12-flowershrubdark.png",
+                            "prettyName": "12-flowershrubdark.png"
+                        },
+                        {
+                            "fileName": "12-flowerrose.png",
+                            "prettyName": "12-flowerrose.png"
+                        },
+                        {
+                            "fileName": "12-flowernasturtium.png",
+                            "prettyName": "12-flowernasturtium.png"
+                        },
+                        {
+                            "fileName": "12-flowerhydrangea.png",
+                            "prettyName": "12-flowerhydrangea.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 13,
+                    "prettyName": "13",
+                    "alternates": [
+                        {
+                            "fileName": "13-flowershrubdark.png",
+                            "prettyName": "13-flowershrubdark.png"
+                        },
+                        {
+                            "fileName": "13-flowernasturtium.png",
+                            "prettyName": "13-flowernasturtium.png"
+                        },
+                        {
+                            "fileName": "13-flowershrub.png",
+                            "prettyName": "13-flowershrub.png"
+                        },
+                        {
+                            "fileName": "13-flowerrose.png",
+                            "prettyName": "13-flowerrose.png"
+                        },
+                        {
+                            "fileName": "13-flowerhydrangea.png",
+                            "prettyName": "13-flowerhydrangea.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 14,
+                    "prettyName": "14",
+                    "alternates": [
+                        {
+                            "fileName": "14-flowernasturtium.png",
+                            "prettyName": "14-flowernasturtium.png"
+                        },
+                        {
+                            "fileName": "14-flowerrose.png",
+                            "prettyName": "14-flowerrose.png"
+                        },
+                        {
+                            "fileName": "14-flowershrub.png",
+                            "prettyName": "14-flowershrub.png"
+                        },
+                        {
+                            "fileName": "14-flowerhydrangea.png",
+                            "prettyName": "14-flowerhydrangea.png"
+                        },
+                        {
+                            "fileName": "14-flowershrubdark.png",
+                            "prettyName": "14-flowershrubdark.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 15,
+                    "prettyName": "15",
+                    "alternates": [
+                        {
+                            "fileName": "15-sapautumn.png",
+                            "prettyName": "15-sapautumn.png"
+                        },
+                        {
+                            "fileName": "15-sappine.png",
+                            "prettyName": "15-sappine.png"
+                        },
+                        {
+                            "fileName": "15-sapolive.png",
+                            "prettyName": "15-sapolive.png"
+                        },
+                        {
+                            "fileName": "15-sapdarkgreen.png",
+                            "prettyName": "15-sapdarkgreen.png"
+                        },
+                        {
+                            "fileName": "15-sapdead.png",
+                            "prettyName": "15-sapdead.png"
+                        },
+                        {
+                            "fileName": "15-sapgreen.png",
+                            "prettyName": "15-sapgreen.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 16,
+                    "prettyName": "16",
+                    "alternates": [
+                        {
+                            "fileName": "16-markerstone.png",
+                            "prettyName": "16-markerstone.png"
+                        },
+                        {
+                            "fileName": "16-undercob.png",
+                            "prettyName": "16-undercob.png"
+                        },
+                        {
+                            "fileName": "16-cobbbrick.png",
+                            "prettyName": "16-cobbbrick.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 17,
+                    "prettyName": "17",
+                    "alternates": [
+                        {
+                            "fileName": "17-stonebedrock.png",
+                            "prettyName": "17-stonebedrock.png"
+                        },
+                        {
+                            "fileName": "17-fossilbedrock.png",
+                            "prettyName": "17-fossilbedrock.png"
+                        },
+                        {
+                            "fileName": "17-lightbedrock.png",
+                            "prettyName": "17-lightbedrock.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 18,
+                    "prettyName": "18"
+                },
+                {
+                    "index": 19,
+                    "prettyName": "19"
+                },
+                {
+                    "index": 20,
+                    "prettyName": "20"
+                },
+                {
+                    "index": 22,
+                    "prettyName": "22",
+                    "alternates": [
+                        {
+                            "fileName": "22-plainiron.png",
+                            "prettyName": "22-plainiron.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 23,
+                    "prettyName": "23",
+                    "alternates": [
+                        {
+                            "fileName": "23-plaingold.png",
+                            "prettyName": "23-plaingold.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 24,
+                    "prettyName": "24",
+                    "alternates": [
+                        {
+                            "fileName": "24-plaindiamond.png",
+                            "prettyName": "24-plaindiamond.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 25,
+                    "prettyName": "25"
+                },
+                {
+                    "index": 28,
+                    "prettyName": "28"
+                },
+                {
+                    "index": 29,
+                    "prettyName": "29",
+                    "alternates": [
+                        {
+                            "fileName": "29-darkmushroom.png",
+                            "prettyName": "29-darkmushroom.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 32,
+                    "prettyName": "32"
+                },
+                {
+                    "index": 33,
+                    "prettyName": "33"
+                },
+                {
+                    "index": 34,
+                    "prettyName": "34"
+                },
+                {
+                    "index": 35,
+                    "prettyName": "35"
+                },
+                {
+                    "index": 36,
+                    "prettyName": "36",
+                    "alternates": [
+                        {
+                            "fileName": "36-undercobmoss.png",
+                            "prettyName": "36-undercobmoss.png"
+                        },
+                        {
+                            "fileName": "36-cobbbrickmoss.png",
+                            "prettyName": "36-cobbbrickmoss.png"
+                        },
+                        {
+                            "fileName": "36-markerstonemoss.png",
+                            "prettyName": "36-markerstonemoss.png"
+                        },
+                        {
+                            "fileName": "36-mossycobble.png",
+                            "prettyName": "36-mossycobble.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 37,
+                    "prettyName": "37",
+                    "alternates": [
+                        {
+                            "fileName": "37-obsidiandark.png",
+                            "prettyName": "37-obsidiandark.png"
+                        },
+                        {
+                            "fileName": "37-obsidiandef.png",
+                            "prettyName": "37-obsidiandef.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 43,
+                    "prettyName": "43"
+                },
+                {
+                    "index": 44,
+                    "prettyName": "44"
+                },
+                {
+                    "index": 48,
+                    "prettyName": "48"
+                },
+                {
+                    "index": 49,
+                    "prettyName": "49",
+                    "alternates": [
+                        {
+                            "fileName": "49-glassnoborder.png",
+                            "prettyName": "49-glassnoborder.png"
+                        },
+                        {
+                            "fileName": "49-glassstone.png",
+                            "prettyName": "49-glassstone.png"
+                        },
+                        {
+                            "fileName": "49-glassbrick.png",
+                            "prettyName": "49-glassbrick.png"
+                        },
+                        {
+                            "fileName": "49-glassshale.png",
+                            "prettyName": "49-glassshale.png"
+                        },
+                        {
+                            "fileName": "49-glassbrickgrey.png",
+                            "prettyName": "49-glassbrickgrey.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 50,
+                    "prettyName": "50"
+                },
+                {
+                    "index": 51,
+                    "prettyName": "51"
+                },
+                {
+                    "index": 52,
+                    "prettyName": "52",
+                    "alternates": [
+                        {
+                            "fileName": "52-treepine.png",
+                            "prettyName": "52-treepine.png"
+                        },
+                        {
+                            "fileName": "52-treedarkgreen.png",
+                            "prettyName": "52-treedarkgreen.png"
+                        },
+                        {
+                            "fileName": "52-treegreen.png",
+                            "prettyName": "52-treegreen.png"
+                        },
+                        {
+                            "fileName": "52-treeolive.png",
+                            "prettyName": "52-treeolive.png"
+                        },
+                        {
+                            "fileName": "52-treedead.png",
+                            "prettyName": "52-treedead.png"
+                        },
+                        {
+                            "fileName": "52-treeorange.png",
+                            "prettyName": "52-treeorange.png"
+                        },
+                        {
+                            "fileName": "52-treeyellow.png",
+                            "prettyName": "52-treeyellow.png"
+                        },
+                        {
+                            "fileName": "52-treered.png",
+                            "prettyName": "52-treered.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 64,
+                    "prettyName": "64",
+                    "alternates": [
+                        {
+                            "fileName": "64-tweed.png",
+                            "prettyName": "64-tweed.png"
+                        },
+                        {
+                            "fileName": "64-turtleshell.png",
+                            "prettyName": "64-turtleshell.png"
+                        },
+                        {
+                            "fileName": "64-quilt.png",
+                            "prettyName": "64-quilt.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 65,
+                    "prettyName": "65",
+                    "alternates": [
+                        {
+                            "fileName": "65-monstercage.png",
+                            "prettyName": "65-monstercage.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 66,
+                    "prettyName": "66"
+                },
+                {
+                    "index": 67,
+                    "prettyName": "67"
+                },
+                {
+                    "index": 68,
+                    "prettyName": "68",
+                    "alternates": [
+                        {
+                            "fileName": "68-snowlong.png",
+                            "prettyName": "68-snowlong.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 69,
+                    "prettyName": "69",
+                    "alternates": [
+                        {
+                            "fileName": "69-cactusgreen.png",
+                            "prettyName": "69-cactusgreen.png"
+                        },
+                        {
+                            "fileName": "69-cactusflower.png",
+                            "prettyName": "69-cactusflower.png"
+                        },
+                        {
+                            "fileName": "69-cactus.png",
+                            "prettyName": "69-cactus.png"
+                        },
+                        {
+                            "fileName": "69-cactusgreenflower.png",
+                            "prettyName": "69-cactusgreenflower.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 72,
+                    "prettyName": "72",
+                    "alternates": [
+                        {
+                            "fileName": "72-greyclay.png",
+                            "prettyName": "72-greyclay.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 73,
+                    "prettyName": "73",
+                    "alternates": [
+                        {
+                            "fileName": "73-cornstalks.png",
+                            "prettyName": "73-cornstalks.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 74,
+                    "prettyName": "74"
+                },
+                {
+                    "index": 76,
+                    "prettyName": "76"
+                },
+                {
+                    "index": 77,
+                    "prettyName": "77"
+                },
+                {
+                    "index": 80,
+                    "prettyName": "80"
+                },
+                {
+                    "index": 81,
+                    "prettyName": "81",
+                    "alternates": [
+                        {
+                            "fileName": "81-paneldoor.png",
+                            "prettyName": "81-paneldoor.png"
+                        },
+                        {
+                            "fileName": "81-reddoor.png",
+                            "prettyName": "81-reddoor.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 82,
+                    "prettyName": "82",
+                    "alternates": [
+                        {
+                            "fileName": "82-vaultdoor.png",
+                            "prettyName": "82-vaultdoor.png"
+                        },
+                        {
+                            "fileName": "82-prisondoor.png",
+                            "prettyName": "82-prisondoor.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 83,
+                    "prettyName": "83"
+                },
+                {
+                    "index": 84,
+                    "prettyName": "84"
+                },
+                {
+                    "index": 86,
+                    "prettyName": "86"
+                },
+                {
+                    "index": 88,
+                    "prettyName": "88",
+                    "alternates": [
+                        {
+                            "fileName": "88-pumpkinspooky.png",
+                            "prettyName": "88-pumpkinspooky.png"
+                        },
+                        {
+                            "fileName": "88-pumpkin.png",
+                            "prettyName": "88-pumpkin.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 96,
+                    "prettyName": "96"
+                },
+                {
+                    "index": 99,
+                    "prettyName": "99",
+                    "alternates": [
+                        {
+                            "fileName": "99-redlanterns.png",
+                            "prettyName": "99-redlanterns.png"
+                        },
+                        {
+                            "fileName": "99-redcontrol.png",
+                            "prettyName": "99-redcontrol.png"
+                        }
+                    ]
+                },
+                {
+                    "index": 102,
+                    "prettyName": "102"
+                },
+                {
+                    "index": 104,
+                    "prettyName": "104"
+                },
+                {
+                    "index": 107,
+                    "prettyName": "107"
+                },
+                {
+                    "index": 112,
+                    "prettyName": "112"
+                },
+                {
+                    "index": 113,
+                    "prettyName": "113"
+                },
+                {
+                    "index": 116,
+                    "prettyName": "116"
+                },
+                {
+                    "index": 144,
+                    "prettyName": "144"
+                },
+                {
+                    "index": 160,
+                    "prettyName": "160"
+                },
+                {
+                    "index": 205,
+                    "prettyName": "205"
+                },
+                {
+                    "index": 237,
+                    "prettyName": "237"
+                },
+                {
+                    "index": 240,
+                    "prettyName": "240"
+                }
+            ]
+        },
+        {
+            "filePath": "/particles.png",
+            "prettyName": "particles.png"
+        },
+        {
+            "filePath": "/armor/gold_2.png",
+            "prettyName": "gold_2.png",
+            "alternates": [
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "0-blank.png"
+                },
+                {
+                    "fileName": "0-underpants.png",
+                    "prettyName": "0-underpants.png"
+                },
+                {
+                    "fileName": "0-king.png",
+                    "prettyName": "0-king.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/armor/iron_1.png",
+            "prettyName": "iron_1.png",
+            "alternates": [
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "0-blank.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/armor/diamond_1.png",
+            "prettyName": "diamond_1.png",
+            "alternates": [
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "0-blank.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/armor/diamond_2.png",
+            "prettyName": "diamond_2.png",
+            "alternates": [
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "0-blank.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/armor/cloth_2.png",
+            "prettyName": "cloth_2.png",
+            "alternates": [
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "0-blank.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/armor/gold_1.png",
+            "prettyName": "gold_1.png",
+            "alternates": [
+                {
+                    "fileName": "0-noshoulders.png",
+                    "prettyName": "0-noshoulders.png"
+                },
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "0-blank.png"
+                },
+                {
+                    "fileName": "0-king.png",
+                    "prettyName": "0-king.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/armor/cloth_1.png",
+            "prettyName": "cloth_1.png",
+            "alternates": [
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "0-blank.png"
+                },
+                {
+                    "fileName": "0-monocle.png",
+                    "prettyName": "0-monocle.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/armor/sponge_1.png",
+            "prettyName": "sponge_1.png"
+        },
+        {
+            "filePath": "/armor/iron_2.png",
+            "prettyName": "iron_2.png",
+            "alternates": [
+                {
+                    "fileName": "0-blank.png",
+                    "prettyName": "0-blank.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/armor/quiver_1.png",
+            "prettyName": "quiver_1.png"
+        },
+        {
+            "filePath": "/armor/sponge_2.png",
+            "prettyName": "sponge_2.png"
+        },
+        {
+            "filePath": "/char.png",
+            "prettyName": "char.png"
+        },
+        {
+            "filePath": "/rain.png",
+            "prettyName": "rain.png"
+        },
+        {
+            "filePath": "/mob/spider_eyes.png",
+            "prettyName": "spider_eyes.png"
+        },
+        {
+            "filePath": "/mob/creeper.png",
+            "prettyName": "creeper.png",
+            "alternates": [
+                {
+                    "fileName": "0-creeper.png",
+                    "prettyName": "0-creeper.png"
+                },
+                {
+                    "fileName": "0-creeperspooky.png",
+                    "prettyName": "0-creeperspooky.png"
+                },
+                {
+                    "fileName": "0-creeperclassic.png",
+                    "prettyName": "0-creeperclassic.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/mob/spider.png",
+            "prettyName": "spider.png",
+            "alternates": [
+                {
+                    "fileName": "0-spider.png",
+                    "prettyName": "0-spider.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/mob/slime.png",
+            "prettyName": "slime.png",
+            "alternates": [
+                {
+                    "fileName": "0-slimespooky.png",
+                    "prettyName": "0-slimespooky.png"
+                },
+                {
+                    "fileName": "0-redslime.png",
+                    "prettyName": "0-redslime.png"
+                },
+                {
+                    "fileName": "0-slime.png",
+                    "prettyName": "0-slime.png"
+                },
+                {
+                    "fileName": "0-faceslime.png",
+                    "prettyName": "0-faceslime.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/mob/cow.png",
+            "prettyName": "cow.png",
+            "alternates": [
+                {
+                    "fileName": "0-cow.png",
+                    "prettyName": "0-cow.png"
+                },
+                {
+                    "fileName": "0-cowspooky.png",
+                    "prettyName": "0-cowspooky.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/mob/saddle.png",
+            "prettyName": "saddle.png"
+        },
+        {
+            "filePath": "/mob/pig.png",
+            "prettyName": "pig.png",
+            "alternates": [
+                {
+                    "fileName": "0-pigspooky.png",
+                    "prettyName": "0-pigspooky.png"
+                },
+                {
+                    "fileName": "0-pig.png",
+                    "prettyName": "0-pig.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/mob/sheep_fur.png",
+            "prettyName": "sheep_fur.png"
+        },
+        {
+            "filePath": "/mob/chicken.png",
+            "prettyName": "chicken.png",
+            "alternates": [
+                {
+                    "fileName": "0-loon.png",
+                    "prettyName": "0-loon.png"
+                },
+                {
+                    "fileName": "0-duck.png",
+                    "prettyName": "0-duck.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/mob/zombie.png",
+            "prettyName": "zombie.png",
+            "alternates": [
+                {
+                    "fileName": "0-zombiespooky.png",
+                    "prettyName": "0-zombiespooky.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/mob/sheep.png",
+            "prettyName": "sheep.png",
+            "alternates": [
+                {
+                    "fileName": "0-sheepspooky.png",
+                    "prettyName": "0-sheepspooky.png"
+                },
+                {
+                    "fileName": "0-sheep.png",
+                    "prettyName": "0-sheep.png"
+                }
+            ]
+        },
+        {
+            "filePath": "/mob/skeleton.png",
+            "prettyName": "skeleton.png",
+            "alternates": [
+                {
+                    "fileName": "0-skeletonspooky.png",
+                    "prettyName": "0-skeletonspooky.png"
                 }
             ]
         }

@@ -155,6 +155,44 @@ export namespace TextureModel {
 
                 return "";
             }
+
+            private keys = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            generateAlternatesString(): string {
+                var builder = "";
+                for (const texture of this.textures) {
+                    if (texture instanceof SingleTexture) {
+                        if (texture.alternates.length > 1) {
+                            builder = builder.concat(this.keys[texture.alternates.indexOf(texture.selectedAlternate)])
+                        }
+                    } else if (texture instanceof TileMapTexture) {
+                        for (const subtexture of texture.subTextures) {
+                            if (subtexture.alternates.length > 1) {
+                                builder = builder.concat(this.keys[subtexture.alternates.indexOf(subtexture.selectedAlternate)])
+                            }
+                        }
+                    }
+                }
+                return builder;
+            }
+
+            loadAlternatesString(alternates: string) {
+                var index = 0;
+                for (var texture of this.textures) {
+                    if (index >= alternates.length) break;
+                    if (texture instanceof SingleTexture) {
+                        if (texture.alternates.length > 1) {
+                            texture.selectedAlternate = texture.alternates[this.keys.indexOf(alternates[index++])];
+                            console.log(texture.selectedAlternate.name);
+                        } else if (texture instanceof TileMapTexture) {
+                            for (var subtexture of texture.subTextures) {
+                                if (subtexture.alternates.length > 1) {
+                                    subtexture.selectedAlternate = texture.alternates[this.keys.indexOf(alternates[index++])];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         export abstract class Texture {
@@ -181,17 +219,15 @@ export namespace TextureModel {
             constructor(pack: TexturePack, file: FileStructure.TextureFile, metadata: Metadata.FileTexture) {
                 super(pack, metadata);
                 this.file = file;
-                this.getTextureDims();
+                this.getTextureDimsAsync();
             }
 
-            protected getTextureDims(): void {
+            async getTextureDimsAsync(): Promise<void> {
                 var img = new Image();
-                var tex = this;
-                img.onload = _ => {
-                    tex.width = img.width;
-                    tex.height = img.height;
-                }
                 img.src = this.pack.getFullUrl(this);
+                await img.decode();
+                this.width = img.width;
+                this.height = img.height;
             }
         }
 

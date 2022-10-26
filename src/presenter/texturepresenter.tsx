@@ -14,9 +14,9 @@ export namespace TexturePresenter {
 
             this.presenters = [];
             for (var texture of pack.textures) {
-                if (texture instanceof TextureModel.Data.SingleTexture) {
+                if (texture instanceof TextureModel.Data.SingleTexture && texture.alternates.length > 1) {
                     this.presenters.push(new SingleTexturePresenter(texture));
-                } else if (texture instanceof TextureModel.Data.TileMapTexture) {
+                } else if (texture instanceof TextureModel.Data.TileMapTexture && texture.subTextures.length > 1) {
                     this.presenters.push(new TileMapTexturePresenter(texture));
                 }
             }
@@ -26,7 +26,13 @@ export namespace TexturePresenter {
     interface TexturePresenter {
         texture: TextureModel.Data.SingleTexture | TextureModel.Data.TileMapTexture | TextureModel.Data.SubTexture;
         header: string;
+    }
+
+    export interface Previewable {
         previewSrc: string;
+        updatePreviewCallback?: () => void;
+
+        updatePreviewAsync(): Promise<void>;
     }
 
     interface HasAlternates {
@@ -35,12 +41,13 @@ export namespace TexturePresenter {
         setSelectedAlternateAsync(index: number): Promise<void>;
     }
     
-    export class SingleTexturePresenter implements TexturePresenter, HasAlternates {
+    export class SingleTexturePresenter implements TexturePresenter, HasAlternates, Previewable {
         public texture: TextureModel.Data.SingleTexture;
 
         public alternates: TextureAlternatesPresenter;
         public header: string;
-        public previewSrc: string;
+        public previewSrc: string = "";
+        public updatePreviewCallback?: () => void;
 
         constructor(texture: TextureModel.Data.SingleTexture) {
             this.texture = texture;
@@ -53,21 +60,27 @@ export namespace TexturePresenter {
                 this.header = texture.file.getPath();
             }
 
-            this.previewSrc = texture.pack.getFullUrl(texture.selectedAlternate);
+            this.updatePreviewAsync();
         }
 
         async setSelectedAlternateAsync(index: number): Promise<void> {
             this.texture.selectedAlternate = this.texture.alternates[index];
+            this.updatePreviewAsync();
+        }
+
+        async updatePreviewAsync(): Promise<void> {
             this.previewSrc = this.texture.pack.getFullUrl(this.texture.selectedAlternate);
+            if (this.updatePreviewCallback) this.updatePreviewCallback();
         }
     }
 
-    export class TileMapTexturePresenter implements TexturePresenter {
+    export class TileMapTexturePresenter implements TexturePresenter, Previewable {
         public texture: TextureModel.Data.TileMapTexture;
         
         public presenters: SubTexturePresenter[];
         public header: string;
         public previewSrc: string = "";
+        public updatePreviewCallback?: () => void;
 
         constructor(texture: TextureModel.Data.TileMapTexture) {
             this.texture = texture;
@@ -78,26 +91,35 @@ export namespace TexturePresenter {
                 this.header = texture.file.getPath();
             }
 
-            this.presenters = texture.subTextures.map(it => new SubTexturePresenter(this, it));
 
-            this.loadPreviewSrc();
+            this.presenters = [];
+            for (const subTexture of this.texture.subTextures) {
+                if (subTexture.alternates.length > 1) {
+                    this.presenters.push(new SubTexturePresenter(this, subTexture));
+                }
+            }
+
+            this.updatePreviewAsync();
         }
 
-        public async loadPreviewSrc() {
+        async updatePreviewAsync(): Promise<void> {
             var blob = await Composer.composeTileImage(this.texture);
             var url = URL.createObjectURL(blob);
 
             this.previewSrc = url;
+
+            if (this.updatePreviewCallback) this.updatePreviewCallback();
         }
     }
 
-    export class SubTexturePresenter implements TexturePresenter, HasAlternates {
+    export class SubTexturePresenter implements TexturePresenter, HasAlternates, Previewable {
         public parent: TileMapTexturePresenter;
         public texture: TextureModel.Data.SubTexture;
 
         public alternates: TextureAlternatesPresenter;
         public header: string;
         public previewSrc: string = "";
+        public updatePreviewCallback?: () => void;
 
         constructor(parent: TileMapTexturePresenter, texture: TextureModel.Data.SubTexture) {
             this.parent = parent;
@@ -116,21 +138,22 @@ export namespace TexturePresenter {
 
         async setSelectedAlternateAsync(index: number): Promise<void> {
             this.texture.selectedAlternate = this.texture.alternates[index];
+            this.updatePreviewAsync();
+            this.parent.updatePreviewAsync();
+        }
+
+        async updatePreviewAsync(): Promise<void> {
             this.previewSrc = this.texture.pack.getFullUrl(this.texture.selectedAlternate);
-            await this.parent.loadPreviewSrc();
+            if (this.updatePreviewCallback) this.updatePreviewCallback();
         }
     }
 
     export class TextureAlternatesPresenter {
-        public parent: TexturePresenter & HasAlternates;
+        public parent: TexturePresenter & HasAlternates & Previewable;
         public textures: TextureModel.Data.AlternateTexture[];
         public iconSrcs: string[];
-        public get previewSrc(): string {
-            return this.parent.previewSrc;
-        }
-        public updatePreviewCallback?: () => void
 
-        constructor(parent: TexturePresenter & HasAlternates, textures: TextureModel.Data.AlternateTexture[]) {
+        constructor(parent: TexturePresenter & HasAlternates & Previewable, textures: TextureModel.Data.AlternateTexture[]) {
             this.parent = parent;
             this.textures = textures;
 
@@ -138,8 +161,7 @@ export namespace TexturePresenter {
         }
 
         public async onSelectedTextureChangedAsync(index: number) {
-            await this.parent.setSelectedAlternateAsync(index);
-            if (this.updatePreviewCallback) this.updatePreviewCallback();
+            this.parent.setSelectedAlternateAsync(index);
         }
     }
 }

@@ -33,7 +33,7 @@ class App extends React.Component<{
             return (
                 <div>
                     <TextureView.TexturePackView presenter={packPresenter}/>
-                    <button type="button" /*onClick={_ => Zipper.createZip()}*/>Download</button>
+                    <button type="button" onClick={_ => Zipper.createZip(this.state.pack as TextureModel.Data.TexturePack)}>Download</button>
                 </div>
             )
         }
