@@ -65,17 +65,20 @@ export namespace TexturePresenter {
             }
 
             this.updatePreviewAsync();
+            this.updateModelAsync().then(() => {
+                if (this.updatePreviewCallback) this.updatePreviewCallback();
+            });
         }
 
         async setSelectedAlternateAsync(index: number): Promise<void> {
             this.texture.selectedAlternate = this.texture.alternates[index];
             await this.updatePreviewAsync();
             await this.updateModelAsync();
+            if (this.updatePreviewCallback) this.updatePreviewCallback();
         }
 
         async updatePreviewAsync(): Promise<void> {
             this.previewSrc = this.texture.pack.getFullUrl(this.texture.selectedAlternate);
-            if (this.updatePreviewCallback) this.updatePreviewCallback();
         }
 
         async updateModelAsync(): Promise<void> {
@@ -99,7 +102,7 @@ export namespace TexturePresenter {
             var object = await objLoader.loadAsync(objSrc);
             object.traverse(function (child) {
                 if (child instanceof THREE.Mesh) {
-                    child.material = new THREE.MeshStandardMaterial({map: tex});
+                    child.material = new THREE.MeshStandardMaterial({map: tex, transparent: true, alphaTest: 0.5});
                 }
             });
 

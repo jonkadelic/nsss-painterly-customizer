@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { TextureModel } from '../model/texturemodel';
 import { Section } from '../components/section'
 import { Composer } from '../util/composer'
 import { TexturePresenter } from "../presenter/texturepresenter"
 
 import * as THREE from 'three'
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useLoader } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
@@ -166,13 +166,11 @@ export namespace TextureView {
 
         render(): React.ReactNode {
             var prim: JSX.Element | undefined;
-            if (this.props.previewable.model) {
-                prim = <primitive object={this.props.previewable.model} rotation={[0, -Math.PI * 0.9, 0]} scale={2} position={[0, -2, 0]}/>
-            }
+
             return (
                 <div style={{maxWidth:"512px", marginLeft:"0px", marginRight:"0px", display:"block"}}>
                     <Canvas style={{height: "512px"}}>
-                        {prim}
+                        <ThreeDPreview model={this.props.previewable.model}/>
                         <OrbitControls />
                         <ambientLight intensity={0.2}/>
                         <pointLight position={[10, 20, 20]} intensity={0.3}/>
@@ -180,6 +178,18 @@ export namespace TextureView {
                 </div>
             )
         }
+    }
+
+    const ThreeDPreview = (props: {model?: THREE.Object3D}) => {
+        const ref = useRef();
+
+        useFrame(() => {
+            if (ref.current) (ref.current as {rotation: {y: number}}).rotation.y += 0.002;
+        })
+
+        return (
+            <primitive ref={ref} object={props.model} rotation={[0, -Math.PI * 0.9, 0]} scale={2} position={[0, -2, 0]}/>
+        );
     }
 
     class TextureIconComponent extends React.Component<{
