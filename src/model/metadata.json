@@ -1401,6 +1401,7 @@
         {
             "filePath": "/mob/creeper.png",
             "prettyName": "creeper.png",
+            "objSrc": "creeper.obj",
             "alternates": [
                 {
                     "fileName": "0-creeper.png",
@@ -1419,6 +1420,7 @@
         {
             "filePath": "/mob/spider.png",
             "prettyName": "spider.png",
+            "objSrc": "spider.obj",
             "alternates": [
                 {
                     "fileName": "0-spider.png",

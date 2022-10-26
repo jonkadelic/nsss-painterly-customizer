@@ -70,6 +70,7 @@ export namespace TextureModel {
             public prettyName?: string = undefined;
             public tilesX?: number = undefined;
             public tilesY?: number = undefined;
+            public objSrc?: string = undefined;
             public alternates?: Alternate[];
         }
 

@@ -4,6 +4,13 @@ import { Section } from '../components/section'
 import { Composer } from '../util/composer'
 import { TexturePresenter } from "../presenter/texturepresenter"
 
+import * as THREE from 'three'
+import { Canvas } from "@react-three/fiber";
+import { useLoader } from "@react-three/fiber";
+import { OrbitControls, Environment } from "@react-three/drei";
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { ImageLoader } from "three/src/loaders/ImageLoader"
+
 export namespace TextureView {
     export class TexturePackView extends React.Component<{
         presenter: TexturePresenter.TexturePackPresenter
@@ -82,10 +89,18 @@ export namespace TextureView {
         presenter: TexturePresenter.TextureAlternatesPresenter
     }> {
         render(): React.ReactNode {
+            var right: JSX.Element;
+
+            if (this.props.presenter.parent.texture.metadata.objSrc) {
+                right = <TextureRightHand3DPreviewComponent previewable={this.props.presenter.parent}/>
+            } else {
+                right = <TextureRightHandPreviewComponent previewable={this.props.presenter.parent}/>
+            }
+
             return (
                 <div className="grid grid-cols-2 gap-4">
                     <TextureLeftHandPickerComponent presenter={this.props.presenter} iconSrcs={this.props.presenter.iconSrcs}/>
-                    <TextureRightHandPreviewComponent previewable={this.props.presenter.parent}/>
+                    {right}
                 </div>
             )
         }
@@ -129,6 +144,39 @@ export namespace TextureView {
             return (
                 <div style={{maxWidth:"512px", maxHeight:"512px", marginLeft:"0px", marginRight:"0px", display:"block"}}>
                     <img src={this.state.previewSrc} style={{imageRendering: "pixelated", width:"100%", objectFit:"contain", maxHeight:"512px"}}/>
+                </div>
+            )
+        }
+    }
+
+    class TextureRightHand3DPreviewComponent extends React.Component<{
+        previewable: TexturePresenter.Previewable;
+    }, {
+        previewSrc: string
+    }> {
+        constructor(props: any) {
+            super(props);
+
+            this.state = {previewSrc: this.props.previewable.previewSrc};
+        }
+
+        componentDidMount() {
+            this.props.previewable.updatePreviewCallback = () => { this.setState({previewSrc: this.props.previewable.previewSrc}) };
+        }
+
+        render(): React.ReactNode {
+            var prim: JSX.Element | undefined;
+            if (this.props.previewable.model) {
+                prim = <primitive object={this.props.previewable.model} rotation={[0, -Math.PI * 0.9, 0]} scale={2} position={[0, -2, 0]}/>
+            }
+            return (
+                <div style={{maxWidth:"512px", marginLeft:"0px", marginRight:"0px", display:"block"}}>
+                    <Canvas style={{height: "512px"}}>
+                        {prim}
+                        <OrbitControls />
+                        <ambientLight intensity={0.2}/>
+                        <pointLight position={[10, 20, 20]} intensity={0.3}/>
+                    </Canvas>
                 </div>
             )
         }
