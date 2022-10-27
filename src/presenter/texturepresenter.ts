@@ -188,6 +188,10 @@ export namespace TexturePresenter {
         public parent: TexturePresenter & HasAlternates & Previewable;
         public textures: TextureModel.Data.AlternateTexture[];
         public iconSrcs: string[];
+        public get selectedIndex(): number {
+            return (this.parent.texture as TextureModel.Data.HasAlternates).alternates.indexOf((this.parent.texture as TextureModel.Data.HasAlternates).selectedAlternate);
+        }
+        public updateSelectedTextureCallback?: () => void;
 
         constructor(parent: TexturePresenter & HasAlternates & Previewable, textures: TextureModel.Data.AlternateTexture[]) {
             this.parent = parent;
@@ -198,6 +202,7 @@ export namespace TexturePresenter {
 
         public async onSelectedTextureChangedAsync(index: number) {
             this.parent.setSelectedAlternateAsync(index);
+            if (this.updateSelectedTextureCallback) this.updateSelectedTextureCallback();
         }
     }
 }

@@ -4,7 +4,7 @@ import { TexturePresenter } from "../presenter/texturepresenter"
 
 import * as THREE from 'three'
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 
 export namespace TextureView {
     export class TexturePackView extends React.Component<{
@@ -112,6 +112,10 @@ export namespace TextureView {
                 tics.push(<TextureIconComponent presenter={this.props.presenter} imgSrc={this.props.iconSrcs[i]} index={i}/>);
             }
 
+            this.props.presenter.updateSelectedTextureCallback = () => {
+                this.forceUpdate();
+            }
+
             return (
                 <div>
                     {tics}
@@ -200,6 +204,9 @@ export namespace TextureView {
                 margin: 5,
                 userSelect: "none"
             };
+            if (this.props.presenter.selectedIndex == this.props.index) {
+                imageStyle.borderWidth = 4;
+            }
             return (
                 <img src={this.props.imgSrc} width={48} height={48} onClick={_ => this.props.presenter.onSelectedTextureChangedAsync(this.props.index)} style={imageStyle}/>
             );

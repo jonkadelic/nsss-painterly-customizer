@@ -464,47 +464,47 @@
         },
         {
             "filePath": "/gui/icons.png",
-            "prettyName": "icons.png"
+            "prettyName": "HUD icons"
         },
         {
             "filePath": "/gui/gui.png",
-            "prettyName": "gui.png"
+            "prettyName": "GUI elements"
         },
         {
             "filePath": "/gui/inventory.png",
-            "prettyName": "inventory.png",
+            "prettyName": "Inventory GUI",
             "alternates": [
                 {
                     "fileName": "0-creeper.png",
-                    "prettyName": "0-creeper.png"
+                    "prettyName": "Creeper"
                 }
             ]
         },
         {
             "filePath": "/gui/crafting.png",
-            "prettyName": "crafting.png"
+            "prettyName": "Crafting GUI"
         },
         {
             "filePath": "/gui/container.png",
-            "prettyName": "container.png"
+            "prettyName": "Chest GUI"
         },
         {
             "filePath": "/gui/logo.png",
-            "prettyName": "logo.png"
+            "prettyName": "Minecraft logo"
         },
         {
             "filePath": "/gui/furnace.png",
-            "prettyName": "furnace.png",
+            "prettyName": "Furnace GUI",
             "alternates": [
                 {
                     "fileName": "0-noblueprints.png",
-                    "prettyName": "0-noblueprints.png"
+                    "prettyName": "No blueprints"
                 }
             ]
         },
         {
             "filePath": "/terrain.png",
-            "prettyName": "terrain.png",
+            "prettyName": "Terrain",
             "tilesX": 16,
             "tilesY": 16,
             "subTextures": [
@@ -1272,272 +1272,283 @@
         },
         {
             "filePath": "/particles.png",
-            "prettyName": "particles.png"
+            "prettyName": "Particles"
         },
         {
             "filePath": "/armor/gold_2.png",
-            "prettyName": "gold_2.png",
+            "prettyName": "Gold armor 2",
+            "objSrc": "armor_2.obj",
             "alternates": [
                 {
                     "fileName": "0-blank.png",
-                    "prettyName": "0-blank.png"
+                    "prettyName": "Invisible"
                 },
                 {
                     "fileName": "0-underpants.png",
-                    "prettyName": "0-underpants.png"
+                    "prettyName": "Underpants"
                 },
                 {
                     "fileName": "0-king.png",
-                    "prettyName": "0-king.png"
+                    "prettyName": "Kingly armor"
                 }
             ]
         },
         {
             "filePath": "/armor/iron_1.png",
-            "prettyName": "iron_1.png",
+            "prettyName": "Iron armor 1",
+            "objSrc": "armor_1.obj",
             "alternates": [
                 {
                     "fileName": "0-blank.png",
-                    "prettyName": "0-blank.png"
+                    "prettyName": "Invisible"
                 }
             ]
         },
         {
             "filePath": "/armor/diamond_1.png",
-            "prettyName": "diamond_1.png",
+            "prettyName": "Diamond armor 1",
+            "objSrc": "armor_1.obj",
             "alternates": [
                 {
                     "fileName": "0-blank.png",
-                    "prettyName": "0-blank.png"
+                    "prettyName": "Invisible"
                 }
             ]
         },
         {
             "filePath": "/armor/diamond_2.png",
-            "prettyName": "diamond_2.png",
+            "prettyName": "Diamond armor 2",
+            "objSrc": "armor_2.obj",
             "alternates": [
                 {
                     "fileName": "0-blank.png",
-                    "prettyName": "0-blank.png"
+                    "prettyName": "Invisible"
                 }
             ]
         },
         {
             "filePath": "/armor/cloth_2.png",
-            "prettyName": "cloth_2.png",
+            "prettyName": "Leather armor 2",
+            "objSrc": "armor_2.obj",
             "alternates": [
                 {
                     "fileName": "0-blank.png",
-                    "prettyName": "0-blank.png"
+                    "prettyName": "Invisible"
                 }
             ]
         },
         {
             "filePath": "/armor/gold_1.png",
-            "prettyName": "gold_1.png",
+            "prettyName": "Gold armor 1",
+            "objSrc": "armor_1.obj",
             "alternates": [
                 {
                     "fileName": "0-noshoulders.png",
-                    "prettyName": "0-noshoulders.png"
+                    "prettyName": "No shoulders"
                 },
                 {
                     "fileName": "0-blank.png",
-                    "prettyName": "0-blank.png"
+                    "prettyName": "Invisible"
                 },
                 {
                     "fileName": "0-king.png",
-                    "prettyName": "0-king.png"
+                    "prettyName": "Kingly armor"
                 }
             ]
         },
         {
             "filePath": "/armor/cloth_1.png",
-            "prettyName": "cloth_1.png",
+            "prettyName": "Leather armor 1",
+            "objSrc": "armor_1.obj",
             "alternates": [
                 {
                     "fileName": "0-blank.png",
-                    "prettyName": "0-blank.png"
+                    "prettyName": "Invisible"
                 },
                 {
                     "fileName": "0-monocle.png",
-                    "prettyName": "0-monocle.png"
+                    "prettyName": "Monocle"
                 }
             ]
         },
         {
             "filePath": "/armor/sponge_1.png",
-            "prettyName": "sponge_1.png"
+            "prettyName": "Sponge armor 1",
+            "objSrc": "armor_1.obj"
         },
         {
             "filePath": "/armor/iron_2.png",
-            "prettyName": "iron_2.png",
+            "prettyName": "Iron armor 2",
+            "objSrc": "armor_1.obj",
             "alternates": [
                 {
                     "fileName": "0-blank.png",
-                    "prettyName": "0-blank.png"
+                    "prettyName": "Invisible"
                 }
             ]
         },
         {
             "filePath": "/armor/quiver_1.png",
-            "prettyName": "quiver_1.png"
+            "prettyName": "Quiver armor",
+            "objSrc": "armor_1.obj"
         },
         {
             "filePath": "/armor/sponge_2.png",
-            "prettyName": "sponge_2.png"
+            "prettyName": "Sponge armor 2",
+            "objSrc": "armor_2.obj"
         },
         {
             "filePath": "/char.png",
-            "prettyName": "char.png"
+            "prettyName": "Player"
         },
         {
             "filePath": "/rain.png",
-            "prettyName": "rain.png"
+            "prettyName": "Rain"
         },
         {
             "filePath": "/mob/spider_eyes.png",
-            "prettyName": "spider_eyes.png"
+            "prettyName": "Spider eyes"
         },
         {
             "filePath": "/mob/creeper.png",
-            "prettyName": "creeper.png",
+            "prettyName": "Creeper",
             "objSrc": "creeper.obj",
             "alternates": [
                 {
                     "fileName": "0-creeper.png",
-                    "prettyName": "0-creeper.png"
+                    "prettyName": "No glowing eyes"
                 },
                 {
                     "fileName": "0-creeperspooky.png",
-                    "prettyName": "0-creeperspooky.png"
+                    "prettyName": "Spooky creeper"
                 },
                 {
                     "fileName": "0-creeperclassic.png",
-                    "prettyName": "0-creeperclassic.png"
+                    "prettyName": "Classic creeper"
                 }
             ]
         },
         {
             "filePath": "/mob/spider.png",
-            "prettyName": "spider.png",
+            "prettyName": "Spider",
             "objSrc": "spider.obj",
             "alternates": [
                 {
                     "fileName": "0-spider.png",
-                    "prettyName": "0-spider.png"
+                    "prettyName": "Black spider"
                 }
             ]
         },
         {
             "filePath": "/mob/slime.png",
-            "prettyName": "slime.png",
+            "prettyName": "Slime",
             "objSrc": "slime.obj",
             "alternates": [
                 {
                     "fileName": "0-slimespooky.png",
-                    "prettyName": "0-slimespooky.png"
+                    "prettyName": "Spooky slime"
                 },
                 {
                     "fileName": "0-redslime.png",
-                    "prettyName": "0-redslime.png"
+                    "prettyName": "Red slime"
                 },
                 {
                     "fileName": "0-slime.png",
-                    "prettyName": "0-slime.png"
+                    "prettyName": "Pale slime"
                 },
                 {
                     "fileName": "0-faceslime.png",
-                    "prettyName": "0-faceslime.png"
+                    "prettyName": "Slime with face"
                 }
             ]
         },
         {
             "filePath": "/mob/cow.png",
-            "prettyName": "cow.png",
+            "prettyName": "Cow",
             "objSrc": "cow.obj",
             "alternates": [
                 {
                     "fileName": "0-cow.png",
-                    "prettyName": "0-cow.png"
+                    "prettyName": "'Special' cow"
                 },
                 {
                     "fileName": "0-cowspooky.png",
-                    "prettyName": "0-cowspooky.png"
+                    "prettyName": "Spooky cow"
                 }
             ]
         },
         {
             "filePath": "/mob/saddle.png",
-            "prettyName": "saddle.png"
+            "prettyName": "Saddle"
         },
         {
             "filePath": "/mob/pig.png",
-            "prettyName": "pig.png",
+            "prettyName": "Pig",
             "objSrc": "pig.obj",
             "alternates": [
                 {
                     "fileName": "0-pigspooky.png",
-                    "prettyName": "0-pigspooky.png"
+                    "prettyName": "Spooky pig"
                 },
                 {
                     "fileName": "0-pig.png",
-                    "prettyName": "0-pig.png"
+                    "prettyName": "'Special' pig"
                 }
             ]
         },
         {
             "filePath": "/mob/sheep_fur.png",
-            "prettyName": "sheep_fur.png"
+            "prettyName": "Sheep wool"
         },
         {
             "filePath": "/mob/chicken.png",
-            "prettyName": "chicken.png",
+            "prettyName": "Chicken",
             "objSrc": "chicken.obj",
             "alternates": [
                 {
                     "fileName": "0-loon.png",
-                    "prettyName": "0-loon.png"
+                    "prettyName": "Duck Hunt duck"
                 },
                 {
                     "fileName": "0-duck.png",
-                    "prettyName": "0-duck.png"
+                    "prettyName": "Duck"
                 }
             ]
         },
         {
             "filePath": "/mob/zombie.png",
-            "prettyName": "zombie.png",
+            "prettyName": "Zombie",
             "objSrc": "zombie.obj",
             "alternates": [
                 {
                     "fileName": "0-zombiespooky.png",
-                    "prettyName": "0-zombiespooky.png"
+                    "prettyName": "Spooky zombie"
                 }
             ]
         },
         {
             "filePath": "/mob/sheep.png",
-            "prettyName": "sheep.png",
+            "prettyName": "Sheep",
             "objSrc": "sheep.obj",
             "alternates": [
                 {
                     "fileName": "0-sheepspooky.png",
-                    "prettyName": "0-sheepspooky.png"
+                    "prettyName": "Spooky sheep"
                 },
                 {
                     "fileName": "0-sheep.png",
-                    "prettyName": "0-sheep.png"
+                    "prettyName": "'Special' sheep"
                 }
             ]
         },
         {
             "filePath": "/mob/skeleton.png",
-            "prettyName": "skeleton.png",
+            "prettyName": "Skeleton",
             "objSrc": "skeleton.obj",
             "alternates": [
                 {
                     "fileName": "0-skeletonspooky.png",
-                    "prettyName": "0-skeletonspooky.png"
+                    "prettyName": "Spooky skeleton"
                 }
             ]
         }
