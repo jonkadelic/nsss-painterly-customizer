@@ -1,15 +1,10 @@
 import React, { useRef } from 'react';
-import { TextureModel } from '../model/texturemodel';
 import { Section } from '../components/section'
-import { Composer } from '../util/composer'
 import { TexturePresenter } from "../presenter/texturepresenter"
 
 import * as THREE from 'three'
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useLoader } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { ImageLoader } from "three/src/loaders/ImageLoader"
 
 export namespace TextureView {
     export class TexturePackView extends React.Component<{
@@ -202,7 +197,8 @@ export namespace TextureView {
                 imageRendering: "pixelated",
                 display: "inline-block",
                 background: "magenta",
-                margin: 5
+                margin: 5,
+                userSelect: "none"
             };
             return (
                 <img src={this.props.imgSrc} width={48} height={48} onClick={_ => this.props.presenter.onSelectedTextureChangedAsync(this.props.index)} style={imageStyle}/>
