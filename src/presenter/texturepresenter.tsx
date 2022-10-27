@@ -102,7 +102,7 @@ export namespace TexturePresenter {
             var object = await objLoader.loadAsync(objSrc);
             object.traverse(function (child) {
                 if (child instanceof THREE.Mesh) {
-                    child.material = new THREE.MeshStandardMaterial({map: tex, transparent: true, alphaTest: 0.5});
+                    child.material = new THREE.MeshStandardMaterial({map: tex, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide});
                 }
             });
 

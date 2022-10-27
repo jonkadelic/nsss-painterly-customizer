@@ -1431,6 +1431,7 @@
         {
             "filePath": "/mob/slime.png",
             "prettyName": "slime.png",
+            "objSrc": "slime.obj",
             "alternates": [
                 {
                     "fileName": "0-slimespooky.png",
@@ -1453,6 +1454,7 @@
         {
             "filePath": "/mob/cow.png",
             "prettyName": "cow.png",
+            "objSrc": "cow.obj",
             "alternates": [
                 {
                     "fileName": "0-cow.png",
@@ -1471,6 +1473,7 @@
         {
             "filePath": "/mob/pig.png",
             "prettyName": "pig.png",
+            "objSrc": "pig.obj",
             "alternates": [
                 {
                     "fileName": "0-pigspooky.png",
@@ -1489,6 +1492,7 @@
         {
             "filePath": "/mob/chicken.png",
             "prettyName": "chicken.png",
+            "objSrc": "chicken.obj",
             "alternates": [
                 {
                     "fileName": "0-loon.png",
@@ -1514,6 +1518,7 @@
         {
             "filePath": "/mob/sheep.png",
             "prettyName": "sheep.png",
+            "objSrc": "sheep.obj",
             "alternates": [
                 {
                     "fileName": "0-sheepspooky.png",
@@ -1528,6 +1533,7 @@
         {
             "filePath": "/mob/skeleton.png",
             "prettyName": "skeleton.png",
+            "objSrc": "skeleton.obj",
             "alternates": [
                 {
                     "fileName": "0-skeletonspooky.png",
